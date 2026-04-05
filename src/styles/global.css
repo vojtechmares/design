@@ -44,6 +44,9 @@
   --color-orange-800: #9A3412;
   --color-orange-900: #7C2D12;
 
+  --color-red-50: #FEF2F2;
+  --color-red-500: #EF4444;
+
   /* Animations */
   --animate-fade-in-up: fadeInUp 0.6s ease-out;
   --animate-shimmer: shimmer 1.5s infinite;
