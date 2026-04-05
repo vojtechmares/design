@@ -1,0 +1,32 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  subtitle?: string;
+  variant?: 'light' | 'dark';
+}
+
+const { id, title, subtitle, variant = 'light' } = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<section
+  id={id}
+  class:list={[
+    'border-t py-16 px-0',
+    isDark
+      ? 'bg-zinc-900 text-zinc-100 border-zinc-700'
+      : 'bg-white text-zinc-700 border-zinc-200',
+  ]}
+>
+  <h2 class:list={[isDark && 'text-zinc-100']}>{title}</h2>
+  {subtitle && (
+    <p class:list={['mt-2 text-base', isDark ? 'text-zinc-400' : 'text-zinc-500']}>
+      {subtitle}
+    </p>
+  )}
+  <div class="mt-10">
+    <slot />
+  </div>
+</section>

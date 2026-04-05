@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "2462fa74e41cf41b83ba098a34b316c4ce126e4597da7db39dd8e659cfee9136"
+    },
+    "dogfood": {
+      "source": "vercel-labs/agent-browser",
+      "sourceType": "github",
+      "computedHash": "c1b1133e43d087a9f97de44c2b8abdd4b6c59364d3ac9c0456b01916d58a55b2"
+    }
+  }
+}

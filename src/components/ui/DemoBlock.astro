@@ -1,0 +1,28 @@
+---
+interface Props {
+  label?: string;
+  variant?: 'light' | 'dark';
+}
+
+const { label, variant = 'light' } = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<div>
+  {label && (
+    <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">
+      {label}
+    </span>
+  )}
+  <div
+    class:list={[
+      'border p-6',
+      isDark
+        ? 'bg-zinc-900 border-zinc-700'
+        : 'bg-white border-zinc-200',
+    ]}
+  >
+    <slot />
+  </div>
+</div>

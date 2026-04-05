@@ -1,0 +1,40 @@
+---
+import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="shapes" title="Shapes & Radius" subtitle="Sharp design system — 0px border radius everywhere.">
+
+  <p class="text-sm text-zinc-600 mb-8">
+    Sharp edges everywhere. No rounding. Technical, modern look inspired by PlanetScale and OpenStatus.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Actions -->
+    <DemoBlock label="Actions">
+      <div class="flex flex-col items-center gap-3 py-4">
+        <button
+          class="bg-orange-500 hover:bg-orange-600 text-black font-heading font-semibold text-sm px-6 py-2.5 transition-colors duration-200 cursor-pointer"
+          style="border-radius: 0px;"
+        >
+          Button
+        </button>
+        <span class="text-xs text-zinc-500">Radius: 0px (Sharp)</span>
+      </div>
+    </DemoBlock>
+
+    <!-- Data -->
+    <DemoBlock label="Data">
+      <div class="flex flex-col items-center gap-3 py-4">
+        <input
+          type="text"
+          placeholder="Input field"
+          class="border border-zinc-300 px-4 py-2.5 text-sm font-body text-zinc-700 w-full max-w-xs focus:outline-none focus:border-zinc-500 transition-colors"
+          style="border-radius: 0px;"
+        />
+        <span class="text-xs text-zinc-500">Radius: 0px (Sharp)</span>
+      </div>
+    </DemoBlock>
+  </div>
+
+</Section>

@@ -1,0 +1,38 @@
+---
+interface Props {
+  element: string;
+  font: string;
+  weight: string;
+  size: string;
+  lineHeight: string;
+  usage: string;
+}
+
+const { element, font, weight, size, lineHeight, usage } = Astro.props;
+
+const Element = element as any;
+
+const fontFamily: Record<string, string> = {
+  'IBM Plex Sans': 'font-display',
+  'Inter': 'font-heading',
+  'Space Mono': 'font-body',
+};
+
+const fontClass = fontFamily[font] ?? 'font-body';
+---
+
+<div>
+  <Element
+    class={fontClass}
+    style={`font-size: ${size}; font-weight: ${weight}; line-height: ${lineHeight};`}
+  >
+    The quick brown fox jumps over the lazy dog
+  </Element>
+  <div class="mt-2 flex flex-wrap gap-4 font-body text-xs text-zinc-500">
+    <span>{font}</span>
+    <span>{size}</span>
+    <span>{weight}</span>
+    <span>{lineHeight}</span>
+  </div>
+  <p class="mt-1 text-xs text-zinc-500">{usage}</p>
+</div>

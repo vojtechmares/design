@@ -1,0 +1,78 @@
+---
+import Section from './ui/Section.astro';
+import ColorSwatch from './ui/ColorSwatch.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="code-colors" title="Code Colors" subtitle="Syntax highlighting palette for code blocks and inline code.">
+
+  <!-- Color Swatches Grid -->
+  <div class="grid gap-6 grid-cols-2 lg:grid-cols-3">
+    <ColorSwatch
+      name="Blue-300"
+      hex="#93C5FD"
+      rgb="147, 197, 253"
+      tailwind="Blue-300"
+      oklch="0.809 0.105 251.8"
+      cmyk="42%, 22%, 0%, 1%"
+      usage="Functions, methods, procedures."
+    />
+    <ColorSwatch
+      name="Emerald-300"
+      hex="#6EE7B7"
+      rgb="110, 231, 183"
+      tailwind="Emerald-300"
+      oklch="0.845 0.143 165.0"
+      cmyk="52%, 0%, 21%, 9%"
+      usage="Strings, text values."
+    />
+    <ColorSwatch
+      name="Orange-300"
+      hex="#FDBA74"
+      rgb="253, 186, 116"
+      tailwind="Orange-300"
+      oklch="0.83 0.16 70.0"
+      cmyk="0%, 26%, 54%, 1%"
+      usage="Important: keywords, HTML tags."
+    />
+    <ColorSwatch
+      name="Amber-300"
+      hex="#FCD34D"
+      rgb="252, 211, 77"
+      tailwind="Amber-300"
+      oklch="0.879 0.169 91.6"
+      cmyk="0%, 16%, 69%, 1%"
+      usage="Numbers, constants, boolean values."
+    />
+    <ColorSwatch
+      name="Purple-300"
+      hex="#D8B4FE"
+      rgb="216, 180, 254"
+      tailwind="Purple-300"
+      oklch="0.811 0.111 293.6"
+      cmyk="15%, 29%, 0%, 0%"
+      usage="Classes, types, special objects."
+    />
+  </div>
+
+  <!-- Code Example -->
+  <div class="mt-12">
+    <h3>Code Example</h3>
+    <div class="mt-4">
+      <DemoBlock label="Syntax highlighting preview" variant="dark">
+        <pre class="font-body text-sm leading-relaxed text-zinc-100 overflow-x-auto"><code><span style="color: #FDBA74;">function</span> <span style="color: #93C5FD;">calculateTotal</span>(<span style="color: #D8B4FE;">items</span>) {'{'}
+  <span style="color: #FDBA74;">const</span> <span style="color: #FCD34D;">TAX_RATE</span> = <span style="color: #FCD34D;">0.21</span>;
+  <span style="color: #FDBA74;">let</span> total = <span style="color: #FCD34D;">0</span>;
+
+  <span style="color: #FDBA74;">for</span> (<span style="color: #FDBA74;">const</span> item <span style="color: #FDBA74;">of</span> <span style="color: #D8B4FE;">items</span>) {'{'}
+    <span style="color: #93C5FD;">console</span>.<span style="color: #93C5FD;">log</span>(<span style="color: #6EE7B7;">'Processing:'</span>, item);
+    total += item.price;
+  {'}'}
+
+  <span style="color: #FDBA74;">return</span> total * (<span style="color: #FCD34D;">1</span> + <span style="color: #FCD34D;">TAX_RATE</span>);
+{'}'}</code></pre>
+      </DemoBlock>
+    </div>
+  </div>
+
+</Section>

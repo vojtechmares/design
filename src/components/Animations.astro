@@ -1,0 +1,115 @@
+---
+import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="animations" title="Animations" subtitle="Motion tokens and live animation demos.">
+
+  <!-- a) Fade In Up -->
+  <h3 class="mb-4">Fade In Up</h3>
+
+  <div class="flex flex-wrap gap-4 text-xs text-zinc-500 mb-6">
+    <span><span class="font-heading font-semibold text-zinc-700">Duration:</span> 0.6s / 1.2s (slow)</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Easing:</span> ease-out</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Offset:</span> 30px bottom-to-top</span>
+  </div>
+
+  <DemoBlock label="Live Demo — Scroll into view">
+    <div class="flex items-center justify-center py-12">
+      <div
+        id="fade-in-demo"
+        class="opacity-0 bg-zinc-900 text-zinc-100 px-8 py-6 text-center font-heading text-sm"
+      >
+        <p class="font-semibold mb-1">This element fades in</p>
+        <p class="text-zinc-400 text-xs">animation: fadeInUp 0.6s ease-out</p>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- b) Typewriter Text -->
+  <h3 class="mt-12 mb-4">Typewriter Text</h3>
+
+  <div class="flex flex-wrap gap-4 text-xs text-zinc-500 mb-6">
+    <span><span class="font-heading font-semibold text-zinc-700">Duration:</span> 3s (configurable)</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Steps:</span> steps(37, end)</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Cursor:</span> blink 0.8s</span>
+  </div>
+
+  <DemoBlock label="Live Demo — Typewriter">
+    <div class="flex items-center justify-center py-12">
+      <div
+        class="typewriter-text overflow-hidden whitespace-nowrap border-r-2 border-zinc-900 font-body text-base text-zinc-900"
+        style="width: 0; animation: typewriter 3s steps(37, end) forwards, blink 0.8s step-end infinite;"
+      >
+        We code precisely. We deliver fast.
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- c) Hover Highlight -->
+  <h3 class="mt-12 mb-4">Hover Highlight</h3>
+
+  <div class="flex flex-wrap gap-4 text-xs text-zinc-500 mb-6">
+    <span><span class="font-heading font-semibold text-zinc-700">Border color:</span> Orange-500 (#f97316)</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Border width:</span> 1px</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Transition:</span> 0.3s ease</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Light bg -> Light block -->
+    <DemoBlock label="Light bg / Light block">
+      <div class="bg-white p-6 flex items-center justify-center">
+        <div class="border border-transparent hover:border-orange-500 transition-all duration-300 bg-white text-zinc-700 px-8 py-4 text-sm font-heading font-semibold text-center cursor-pointer border-zinc-200" style="border-width: 1px;">
+          Hover me
+        </div>
+      </div>
+    </DemoBlock>
+
+    <!-- Light bg -> Dark block -->
+    <DemoBlock label="Light bg / Dark block">
+      <div class="bg-white p-6 flex items-center justify-center">
+        <div class="border border-transparent hover:border-orange-500 transition-all duration-300 bg-zinc-900 text-zinc-100 px-8 py-4 text-sm font-heading font-semibold text-center cursor-pointer" style="border-width: 1px;">
+          Hover me
+        </div>
+      </div>
+    </DemoBlock>
+
+    <!-- Dark bg -> Light block -->
+    <DemoBlock label="Dark bg / Light block" variant="dark">
+      <div class="bg-zinc-900 p-6 flex items-center justify-center">
+        <div class="border border-transparent hover:border-orange-500 transition-all duration-300 bg-white text-zinc-700 px-8 py-4 text-sm font-heading font-semibold text-center cursor-pointer" style="border-width: 1px;">
+          Hover me
+        </div>
+      </div>
+    </DemoBlock>
+
+    <!-- Dark bg -> Dark block -->
+    <DemoBlock label="Dark bg / Dark block" variant="dark">
+      <div class="bg-zinc-900 p-6 flex items-center justify-center">
+        <div class="border border-transparent hover:border-orange-500 transition-all duration-300 bg-zinc-800 text-zinc-100 px-8 py-4 text-sm font-heading font-semibold text-center cursor-pointer" style="border-width: 1px;">
+          Hover me
+        </div>
+      </div>
+    </DemoBlock>
+  </div>
+
+</Section>
+
+<script>
+  // IntersectionObserver for fade-in-up demo
+  const fadeEl = document.getElementById('fade-in-demo');
+  if (fadeEl) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            fadeEl.style.animation = 'fadeInUp 0.6s ease-out forwards';
+            observer.unobserve(fadeEl);
+          }
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(fadeEl);
+  }
+</script>

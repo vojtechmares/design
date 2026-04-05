@@ -1,0 +1,106 @@
+---
+import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="grid-layout" title="Container & Spacing" subtitle="Container system, hero structure, and grid layouts.">
+
+  <!-- a) Container System -->
+  <h3 class="mb-6">Container System</h3>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+    <!-- Standard Container -->
+    <DemoBlock label="Standard Container">
+      <div class="border border-dashed border-zinc-400 p-6 text-center">
+        <p class="font-heading font-semibold text-zinc-900 text-sm">max-width: 1280px</p>
+        <p class="text-xs text-zinc-500 mt-2">Homepage, portfolio, contact, general pages</p>
+      </div>
+    </DemoBlock>
+
+    <!-- Prose Mode -->
+    <DemoBlock label="Prose Mode">
+      <div class="mx-auto border border-dashed border-zinc-400 p-6 text-center" style="max-width: 65ch;">
+        <p class="font-heading font-semibold text-zinc-900 text-sm">max-width: 65ch</p>
+        <p class="text-xs text-zinc-500 mt-2">Blog posts, talks, documentation — text-heavy content for optimal readability</p>
+      </div>
+    </DemoBlock>
+  </div>
+
+  <!-- Container Specs -->
+  <div class="flex flex-wrap gap-6 text-xs text-zinc-500 mb-12">
+    <span><span class="font-heading font-semibold text-zinc-700">Standard Container:</span> 1280px</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Prose (Content):</span> 65ch</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Breakpoint:</span> 1024px</span>
+  </div>
+
+  <!-- b) Hero Section -->
+  <h3 class="mb-6">Hero Section</h3>
+
+  <DemoBlock label="Hero Structure" variant="dark">
+    <div class="bg-zinc-900 p-8 text-center">
+      <h1 class="text-zinc-100 text-3xl md:text-4xl font-display font-bold mb-3">Article or Talk Title</h1>
+      <p class="text-zinc-400 text-sm mb-6">Published: January 11, 2026</p>
+      <p class="text-zinc-500 text-xs max-w-xl mx-auto">
+        Structure: Dark hero background (Zinc-900) &rarr; Title (H1) &rarr; Publication date &rarr; Then content follows in prose mode
+      </p>
+    </div>
+  </DemoBlock>
+
+  <!-- c) Grid Layout -->
+  <h3 class="mt-12 mb-6">Grid Layout</h3>
+
+  <div class="flex flex-wrap gap-4 text-xs text-zinc-500 mb-6">
+    <span><span class="font-heading font-semibold text-zinc-700">Columns:</span> 12, --grid-col: 12</span>
+    <span><span class="font-heading font-semibold text-zinc-700">Gap:</span> 32px, --grid-gap: 32px</span>
+  </div>
+
+  <div class="space-y-6">
+    <!-- 2-8-2 -->
+    <DemoBlock label="2-8-2 (Three columns)">
+      <div class="grid grid-cols-12 gap-[32px]">
+        <div class="col-span-2 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Sidebar L</div>
+        <div class="col-span-8 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Main Content</div>
+        <div class="col-span-2 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Sidebar R</div>
+      </div>
+    </DemoBlock>
+
+    <!-- 8-4 -->
+    <DemoBlock label="8-4 (Content + Sidebar)">
+      <div class="grid grid-cols-12 gap-[32px]">
+        <div class="col-span-8 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Main Content</div>
+        <div class="col-span-4 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Sidebar</div>
+      </div>
+    </DemoBlock>
+
+    <!-- 9-3 -->
+    <DemoBlock label="9-3 (Wide + Narrow)">
+      <div class="grid grid-cols-12 gap-[32px]">
+        <div class="col-span-9 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Main Content</div>
+        <div class="col-span-3 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Sidebar</div>
+      </div>
+    </DemoBlock>
+
+    <!-- 4-4-4 -->
+    <DemoBlock label="4-4-4 (Three equal)">
+      <div class="grid grid-cols-12 gap-[32px]">
+        <div class="col-span-4 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Column 1</div>
+        <div class="col-span-4 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Column 2</div>
+        <div class="col-span-4 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Column 3</div>
+      </div>
+    </DemoBlock>
+
+    <!-- 6-6 -->
+    <DemoBlock label="6-6 (Two equal)">
+      <div class="grid grid-cols-12 gap-[32px]">
+        <div class="col-span-6 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Column 1</div>
+        <div class="col-span-6 bg-orange-500 text-black text-xs font-heading font-semibold p-3 text-center">Column 2</div>
+      </div>
+    </DemoBlock>
+  </div>
+
+  <!-- Note -->
+  <div class="mt-8 border border-orange-300 bg-orange-50 p-4 text-xs text-zinc-700">
+    <span class="font-heading font-semibold text-orange-700">Mobile First</span> — The site is mobile-first. Grid layout is optional for specific cases, the primary system is containers with responsive widths.
+  </div>
+
+</Section>

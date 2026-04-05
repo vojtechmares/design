@@ -1,0 +1,145 @@
+---
+import Section from './ui/Section.astro';
+import TypeSample from './ui/TypeSample.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="typography" title="Typography" subtitle="Font families, typographic scale, and text styling guidelines.">
+
+  <!-- Font Showcase -->
+  <div class="space-y-10">
+    <div>
+      <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">Display</span>
+      <p class="font-display text-4xl font-bold">Headings</p>
+      <p class="mt-1 text-xs text-zinc-500">IBM Plex Sans &mdash; All headings (H1&ndash;H3)</p>
+    </div>
+
+    <div>
+      <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">UI</span>
+      <p class="font-heading text-2xl font-semibold">Interface Elements</p>
+      <p class="mt-1 text-xs text-zinc-500">Inter &mdash; Smaller headings (H4&ndash;H6), UI components</p>
+    </div>
+
+    <div>
+      <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">Body</span>
+      <p class="font-body text-base">Body text and paragraphs</p>
+      <p class="font-body text-sm mt-1">Code / Data: <code class="bg-zinc-100 px-1.5 py-0.5 text-sm">const x = 42;</code></p>
+      <p class="mt-1 text-xs text-zinc-500">Space Mono &mdash; Body text, code blocks</p>
+    </div>
+  </div>
+
+  <!-- Type Samples -->
+  <div class="mt-12 space-y-8">
+    <TypeSample element="h1" font="IBM Plex Sans" weight="700" size="3rem" lineHeight="1.1" usage="Hero sections" />
+    <TypeSample element="h2" font="IBM Plex Sans" weight="600" size="2.25rem" lineHeight="1.2" usage="Main sections" />
+    <TypeSample element="h3" font="IBM Plex Sans" weight="600" size="1.75rem" lineHeight="1.3" usage="Subsections, cards" />
+    <TypeSample element="h4" font="Inter" weight="500" size="1.25rem" lineHeight="1.4" usage="Smaller headings" />
+    <TypeSample element="h5" font="Inter" weight="600" size="1.125rem" lineHeight="1.5" usage="UI components" />
+    <TypeSample element="h6" font="Inter" weight="600" size="1rem" lineHeight="1.5" usage="Inline headings" />
+    <TypeSample element="p" font="Space Mono" weight="400" size="1rem" lineHeight="1.6" usage="Body text" />
+  </div>
+
+  <!-- Typographic Scale Table -->
+  <div class="mt-12">
+    <h3>Typographic Scale</h3>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full font-body text-sm border-collapse">
+        <thead>
+          <tr class="bg-zinc-100 text-left">
+            <th class="px-4 py-2 font-semibold">Element</th>
+            <th class="px-4 py-2 font-semibold">Size</th>
+            <th class="px-4 py-2 font-semibold">Font / Weight</th>
+            <th class="px-4 py-2 font-semibold">Line-height</th>
+            <th class="px-4 py-2 font-semibold">Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H1</td>
+            <td class="px-4 py-2">48px / 3rem</td>
+            <td class="px-4 py-2">IBM Plex Sans Bold (700)</td>
+            <td class="px-4 py-2">1.1</td>
+            <td class="px-4 py-2">Hero sections</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H2</td>
+            <td class="px-4 py-2">36px / 2.25rem</td>
+            <td class="px-4 py-2">IBM Plex Sans SemiBold (600)</td>
+            <td class="px-4 py-2">1.2</td>
+            <td class="px-4 py-2">Main sections</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H3</td>
+            <td class="px-4 py-2">28px / 1.75rem</td>
+            <td class="px-4 py-2">IBM Plex Sans SemiBold (600)</td>
+            <td class="px-4 py-2">1.3</td>
+            <td class="px-4 py-2">Subsections, cards</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H4</td>
+            <td class="px-4 py-2">20px / 1.25rem</td>
+            <td class="px-4 py-2">Inter Medium (500)</td>
+            <td class="px-4 py-2">1.4</td>
+            <td class="px-4 py-2">Smaller headings</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H5</td>
+            <td class="px-4 py-2">18px / 1.125rem</td>
+            <td class="px-4 py-2">Inter SemiBold (600)</td>
+            <td class="px-4 py-2">1.5</td>
+            <td class="px-4 py-2">UI components</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">H6</td>
+            <td class="px-4 py-2">16px / 1rem</td>
+            <td class="px-4 py-2">Inter SemiBold (600)</td>
+            <td class="px-4 py-2">1.5</td>
+            <td class="px-4 py-2">Inline headings</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">P</td>
+            <td class="px-4 py-2">16px / 1rem</td>
+            <td class="px-4 py-2">Space Mono Regular (400)</td>
+            <td class="px-4 py-2">1.6</td>
+            <td class="px-4 py-2">Body text</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">SMALL</td>
+            <td class="px-4 py-2">14px / 0.875rem</td>
+            <td class="px-4 py-2">Space Mono Regular (400)</td>
+            <td class="px-4 py-2">1.5</td>
+            <td class="px-4 py-2">Captions, metadata</td>
+          </tr>
+          <tr class="odd:bg-zinc-50">
+            <td class="px-4 py-2 font-semibold">A</td>
+            <td class="px-4 py-2">Inherit</td>
+            <td class="px-4 py-2">Space Mono Medium (500)</td>
+            <td class="px-4 py-2">Inherit</td>
+            <td class="px-4 py-2">Amber-800 #92400E</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Link Styles -->
+  <div class="mt-12">
+    <h3>Link Styles</h3>
+    <div class="mt-4 grid gap-6 md:grid-cols-2">
+      <DemoBlock label="Light background">
+        <a href="#" class="font-body font-medium underline" style="color: #92400E;">Link on light background</a>
+      </DemoBlock>
+      <DemoBlock label="Dark background" variant="dark">
+        <a href="#" class="font-body font-medium text-zinc-100 underline">Link on dark background</a>
+      </DemoBlock>
+    </div>
+  </div>
+
+  <!-- Responsive note -->
+  <div class="mt-8">
+    <p class="font-body text-sm text-zinc-500">
+      <strong class="font-semibold">Responsive scaling:</strong> Desktop 100% &bull; Tablet 90% (H1&ndash;H3) &bull; Mobile 80% (H1&ndash;H3, min 24px)
+    </p>
+  </div>
+
+</Section>

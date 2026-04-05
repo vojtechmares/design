@@ -1,0 +1,48 @@
+---
+/**
+ * ContextualBlocks — Shows how elements respond to background changes.
+ * Demonstrates primary/secondary buttons on light and dark backgrounds.
+ */
+---
+
+<div class="space-y-0">
+  <!-- Light Section -->
+  <div class="bg-white border border-zinc-200 p-8">
+    <h4 class="text-zinc-900">Standard Section</h4>
+    <p class="mt-2 text-zinc-700">
+      Standard content. Text is Zinc-700.
+    </p>
+    <div class="mt-6 flex gap-4">
+      <button
+        class="bg-orange-500 px-6 py-2 font-heading font-semibold text-black hover:bg-orange-600 transition-colors"
+      >
+        Primary
+      </button>
+      <button
+        class="bg-white border border-zinc-300 px-6 py-2 font-heading font-semibold text-zinc-700 hover:bg-zinc-50 transition-colors"
+      >
+        Secondary
+      </button>
+    </div>
+  </div>
+
+  <!-- Dark Section -->
+  <div class="bg-zinc-900 border border-zinc-700 p-8">
+    <h4 class="text-zinc-100">Dark Section</h4>
+    <p class="mt-2 text-zinc-100">
+      Footer or Hero. Text is light.
+    </p>
+    <div class="mt-6 flex gap-4">
+      <button
+        class="bg-orange-500 px-6 py-2 font-heading font-semibold text-black hover:bg-orange-600 transition-colors"
+      >
+        Primary
+      </button>
+      <button
+        class="bg-zinc-800 border border-zinc-600 px-6 py-2 font-heading font-semibold text-zinc-100 hover:bg-zinc-700 transition-colors"
+      >
+        Secondary
+      </button>
+    </div>
+  </div>
+</div>

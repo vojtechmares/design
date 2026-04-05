@@ -1,0 +1,38 @@
+---
+/**
+ * DosAndDonts — Shows contrast examples with DO and DON'T labels.
+ */
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+  <!-- DO -->
+  <DemoBlock label="Do">
+    <div class="space-y-3">
+      <div class="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-black">
+        Black text
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-heading text-sm font-semibold" style="color: #059669;">
+          ✓ DO
+        </span>
+      </div>
+      <p class="text-sm text-zinc-600">High contrast on orange.</p>
+    </div>
+  </DemoBlock>
+
+  <!-- DON'T -->
+  <DemoBlock label="Don't">
+    <div class="space-y-3">
+      <div class="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-white">
+        White text
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="font-heading text-sm font-semibold" style="color: #dc2626;">
+          ✗ DON'T
+        </span>
+      </div>
+      <p class="text-sm text-zinc-600">Low contrast (poor readability).</p>
+    </div>
+  </DemoBlock>
+</div>

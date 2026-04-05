@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Mares Design System' } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-white">
+    <div class="flex min-h-screen">
+      <!-- Sidebar slot: hidden on mobile, 260px fixed on desktop -->
+      <slot name="sidebar" />
+
+      <!-- Main content: full-width on mobile, offset by sidebar on desktop -->
+      <main class="flex-1 lg:ml-[260px] w-full pt-14 lg:pt-0">
+        <div class="mx-auto max-w-4xl px-6 py-10">
+          <slot />
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

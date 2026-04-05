@@ -1,0 +1,184 @@
+---
+import { Type, Palette, Code, LayoutGrid, Triangle, Square, MousePointerClick, Loader, CheckCircle, Sparkles, Menu, X } from '@lucide/astro';
+
+const navGroups = [
+  {
+    title: 'CORE FOUNDATIONS',
+    items: [
+      { label: '1. Typography', id: 'typography', icon: 'Type' },
+      { label: '2. Colors & Palette', id: 'colors', icon: 'Palette' },
+      { label: '2C. Code Colors', id: 'code-colors', icon: 'Code' },
+      { label: '3. Grid & Layout', id: 'grid-layout', icon: 'LayoutGrid' },
+      { label: '4. Shapes & Radius', id: 'shapes', icon: 'Triangle' },
+    ],
+  },
+  {
+    title: 'COMPONENTS',
+    items: [
+      { label: 'Color Blocks', id: 'contextual-blocks', icon: 'Square' },
+      { label: 'Buttons & Inputs', id: 'buttons-inputs', icon: 'MousePointerClick' },
+      { label: 'States & Loading', id: 'states-loading', icon: 'Loader' },
+    ],
+  },
+  {
+    title: 'GUIDELINES',
+    items: [
+      { label: "Do's & Don'ts", id: 'dos-donts', icon: 'CheckCircle' },
+      { label: 'Animations', id: 'animations', icon: 'Sparkles' },
+    ],
+  },
+];
+
+const iconMap: Record<string, any> = {
+  Type, Palette, Code, LayoutGrid, Triangle, Square, MousePointerClick, Loader, CheckCircle, Sparkles,
+};
+---
+
+<!-- Mobile top bar -->
+<div class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-white border-b border-zinc-200 px-4 h-14 lg:hidden">
+  <span class="font-display font-bold text-base text-zinc-900">Mares Design System</span>
+  <button id="sidebar-open-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Open menu">
+    <Menu size={24} />
+  </button>
+</div>
+
+<!-- Mobile overlay backdrop -->
+<div id="sidebar-backdrop" class="fixed inset-0 z-40 bg-black/40 hidden lg:hidden"></div>
+
+<!-- Mobile overlay sidebar -->
+<div id="sidebar-mobile" class="fixed inset-y-0 left-0 z-50 w-[280px] bg-white border-r border-zinc-200 transform -translate-x-full transition-transform duration-200 ease-in-out lg:hidden overflow-y-auto">
+  <div class="flex items-center justify-between p-6 pb-0">
+    <div>
+      <div class="font-display font-bold text-lg text-zinc-900">Mares Design System</div>
+      <div class="font-body text-sm text-zinc-500">v1.0</div>
+    </div>
+    <button id="sidebar-close-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Close menu">
+      <X size={20} />
+    </button>
+  </div>
+  <nav class="p-6 pt-2">
+    {navGroups.map((group) => (
+      <div>
+        <h5 class="uppercase text-xs font-heading font-semibold text-zinc-400 tracking-wider mt-8 mb-3 first:mt-4">{group.title}</h5>
+        <ul class="space-y-0.5">
+          {group.items.map((item) => {
+            const IconComponent = iconMap[item.icon];
+            return (
+              <li>
+                <a
+                  href={`#${item.id}`}
+                  data-section={item.id}
+                  class="sidebar-link flex items-center gap-2.5 text-sm font-body text-zinc-600 py-1.5 px-3 rounded-sm no-underline hover:text-zinc-900 hover:bg-zinc-50 transition-colors"
+                >
+                  <IconComponent size={16} class="shrink-0" />
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</div>
+
+<!-- Desktop sidebar -->
+<aside class="hidden lg:block lg:w-[260px] lg:shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:overflow-y-auto bg-white border-r border-zinc-200">
+  <div class="p-6">
+    <div class="font-display font-bold text-lg text-zinc-900">Mares Design System</div>
+    <div class="font-body text-sm text-zinc-500">v1.0</div>
+  </div>
+  <nav class="px-6 pb-6">
+    {navGroups.map((group) => (
+      <div>
+        <h5 class="uppercase text-xs font-heading font-semibold text-zinc-400 tracking-wider mt-8 mb-3 first:mt-2">{group.title}</h5>
+        <ul class="space-y-0.5">
+          {group.items.map((item) => {
+            const IconComponent = iconMap[item.icon];
+            return (
+              <li>
+                <a
+                  href={`#${item.id}`}
+                  data-section={item.id}
+                  class="sidebar-link flex items-center gap-2.5 text-sm font-body text-zinc-600 py-1.5 px-3 rounded-sm no-underline hover:text-zinc-900 hover:bg-zinc-50 transition-colors"
+                >
+                  <IconComponent size={16} class="shrink-0" />
+                  <span>{item.label}</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))}
+  </nav>
+</aside>
+
+<script>
+  // --- Mobile sidebar toggle ---
+  const openBtn = document.getElementById('sidebar-open-btn');
+  const closeBtn = document.getElementById('sidebar-close-btn');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const mobileSidebar = document.getElementById('sidebar-mobile');
+
+  function openMobileSidebar() {
+    mobileSidebar?.classList.remove('-translate-x-full');
+    mobileSidebar?.classList.add('translate-x-0');
+    backdrop?.classList.remove('hidden');
+  }
+
+  function closeMobileSidebar() {
+    mobileSidebar?.classList.add('-translate-x-full');
+    mobileSidebar?.classList.remove('translate-x-0');
+    backdrop?.classList.add('hidden');
+  }
+
+  openBtn?.addEventListener('click', openMobileSidebar);
+  closeBtn?.addEventListener('click', closeMobileSidebar);
+  backdrop?.addEventListener('click', closeMobileSidebar);
+
+  // Close mobile sidebar when a nav link is clicked
+  mobileSidebar?.querySelectorAll('a[data-section]').forEach((link) => {
+    link.addEventListener('click', closeMobileSidebar);
+  });
+
+  // --- Scroll spy ---
+  const sectionIds = [
+    'typography', 'colors', 'code-colors', 'grid-layout', 'shapes',
+    'contextual-blocks', 'buttons-inputs', 'states-loading',
+    'dos-donts', 'animations',
+  ];
+
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter((el): el is HTMLElement => el !== null);
+
+  const allLinks = document.querySelectorAll<HTMLAnchorElement>('a.sidebar-link[data-section]');
+
+  function setActiveLink(sectionId: string) {
+    allLinks.forEach((link) => {
+      if (link.dataset.section === sectionId) {
+        link.classList.add('bg-orange-50', 'text-zinc-900', 'border-l-2', 'border-orange-500');
+        link.classList.remove('text-zinc-600');
+      } else {
+        link.classList.remove('bg-orange-50', 'text-zinc-900', 'border-l-2', 'border-orange-500');
+        link.classList.add('text-zinc-600');
+      }
+    });
+  }
+
+  if (sections.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveLink(entry.target.id);
+          }
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+</script>

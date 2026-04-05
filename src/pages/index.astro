@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Typography from '../components/Typography.astro';
+import Colors from '../components/Colors.astro';
+import CodeColors from '../components/CodeColors.astro';
+import ContainerSpacing from '../components/ContainerSpacing.astro';
+import Animations from '../components/Animations.astro';
+import Shapes from '../components/Shapes.astro';
+import ContextualBlocks from '../components/ContextualBlocks.astro';
+import DosAndDonts from '../components/DosAndDonts.astro';
+import StatesLoading from '../components/StatesLoading.astro';
+---
+
+<Layout title="Mares Design System">
+  <Sidebar slot="sidebar" />
+
+  <section class="hero">
+    <h1>Mares Design System</h1>
+    <p>Complete visual style specification. This document serves as the single source of truth for design and web development.</p>
+  </section>
+
+  <Typography />
+  <Colors />
+  <CodeColors />
+  <ContainerSpacing />
+  <Animations />
+  <Shapes />
+  <ContextualBlocks />
+  <DosAndDonts />
+  <StatesLoading />
+</Layout>
