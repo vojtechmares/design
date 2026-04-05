@@ -1,0 +1,424 @@
+---
+/**
+ * Hero — Full-width page header sections with multiple layout variants.
+ * Dark background (inverse) is default; Blog Listing uses light background.
+ * Stats use inline placeholders — a dedicated Stats component will follow.
+ */
+import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section
+  id="hero"
+  title="Hero"
+  subtitle="Full-width page header sections for different page types."
+>
+<div class="space-y-8">
+
+  <p class="text-sm text-zinc-600">
+    Heroes use a two-column flex layout on desktop (<code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">lg:flex-row</code>) that stacks on mobile. Most variants use the inverse (dark) background. Unlike cards and forms, buttons in heroes are left-aligned with the content flow.
+  </p>
+
+  <!-- Homepage Hero -->
+  <DemoBlock label="Homepage" variant="muted">
+    <div class="py-10 flex flex-col gap-y-8 lg:flex-row lg:items-end lg:justify-between">
+      <!-- Left: text content -->
+      <div class="max-w-xl pb-4 lg:pb-8">
+        <h1 class="font-display font-bold text-zinc-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.1]">
+          I'm<br />
+          <span class="text-orange-500">Vojtěch Mareš,</span><br />
+          DevOps architect.
+        </h1>
+        <p class="mt-6 text-zinc-600 text-base max-w-lg">
+          Together we'll reduce your infrastructure costs, eliminate technical debt,
+          and prepare your IT infrastructure for rapid scaling.
+        </p>
+        <div class="mt-8">
+          <button
+            class="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-orange-500 text-black hover:bg-orange-600 active:bg-orange-500 focus-visible:outline-orange-500 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer"
+          >
+            Schedule a meeting
+          </button>
+        </div>
+      </div>
+      <!-- Right: avatar placeholder (allowed to overflow right edge) -->
+      <div class="shrink-0 ml-6 lg:ml-0 -mb-16 -mr-6">
+        <div class="w-48 h-72 sm:w-60 sm:h-88 lg:w-64 lg:h-96 bg-zinc-700 flex items-center justify-center overflow-hidden">
+          <span class="text-zinc-500 font-heading text-sm">Avatar</span>
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- Service Page Hero -->
+  <DemoBlock label="Service Page" variant="dark">
+    <div class="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
+      <!-- Left -->
+      <div class="max-w-xl">
+        <h1 class="font-display font-bold text-white text-3xl md:text-4xl leading-tight">
+          DevOps services <span class="text-orange-500">tailored</span>
+        </h1>
+        <p class="mt-4 text-zinc-400 text-base">
+          I help companies build and manage modern infrastructure.
+          From one-time consulting through hands-on training to
+          long-term partnerships — always with emphasis on automation,
+          security, and transferring know-how to your team.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <button
+            class="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-4 py-2 text-sm transition duration-150 ease-in-out font-mono cursor-pointer"
+          >
+            Partnership
+          </button>
+          <button
+            class="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-4 py-2 text-sm transition duration-150 ease-in-out font-mono cursor-pointer"
+          >
+            Training
+          </button>
+          <button
+            class="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-4 py-2 text-sm transition duration-150 ease-in-out font-mono cursor-pointer"
+          >
+            Consulting
+          </button>
+        </div>
+      </div>
+      <!-- Right: Stats (placeholder — Stats component TBD) -->
+      <div class="flex flex-col gap-6 lg:pt-2">
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">6+ years</span>
+          <p class="mt-1 text-sm text-zinc-400">of DevOps and cloud infrastructure experience</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">20+ projects</span>
+          <p class="mt-1 text-sm text-zinc-400">successfully completed across industries</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">8 courses</span>
+          <p class="mt-1 text-sm text-zinc-400">regularly scheduled topics</p>
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- Content Page Hero -->
+  <DemoBlock label="Content Page" variant="dark">
+    <div class="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
+      <!-- Left -->
+      <div class="max-w-xl">
+        <h1 class="font-display font-bold text-white text-3xl md:text-4xl leading-tight">
+          Talks at <span class="text-orange-500">conferences</span>
+        </h1>
+        <p class="mt-4 text-zinc-400 text-base">
+          I regularly speak at professional conferences in the Czech Republic
+          and abroad. I share practical experience in DevOps, cloud-native
+          technologies, and modern infrastructure.
+        </p>
+      </div>
+      <!-- Right: Stats (placeholder — Stats component TBD) -->
+      <div class="flex flex-col gap-6 lg:pt-2">
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">8 talks</span>
+          <p class="mt-1 text-sm text-zinc-400">at professional conferences</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">7 conferences</span>
+          <p class="mt-1 text-sm text-zinc-400">in CZ and abroad</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">4+ years</span>
+          <p class="mt-1 text-sm text-zinc-400">of speaking experience</p>
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- Blog Listing Hero -->
+  <DemoBlock label="Blog Listing" variant="dark">
+    <div class="py-10">
+    <h1 class="font-display font-bold text-white text-3xl md:text-4xl">Blog</h1>
+    <!-- Tag filters -->
+    <div class="mt-6 flex flex-wrap gap-2">
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#kubernetes</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#konference</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#prometheus</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#object-storage</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#postgres</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#gitops</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#continuous-integration</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#kontejnery</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#infrastructure-as-code</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#terraform</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#git</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#hetzner</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#argocd</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#gitlab</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#aws-ses</a>
+      <a href="#" class="text-sm font-heading text-zinc-300 underline hover:text-orange-500 transition-colors">#emails</a>
+    </div>
+    <!-- Year archive & Feed -->
+    <div class="mt-4 flex items-center justify-between text-sm font-heading">
+      <div class="flex flex-wrap gap-4">
+        <span class="text-zinc-300">Archive:</span>
+        <a href="#" class="text-zinc-300 underline hover:text-orange-500 transition-colors">2026</a>
+        <a href="#" class="text-zinc-300 underline hover:text-orange-500 transition-colors">2025</a>
+        <a href="#" class="text-zinc-300 underline hover:text-orange-500 transition-colors">2024</a>
+        <a href="#" class="text-zinc-300 underline hover:text-orange-500 transition-colors">2022</a>
+      </div>
+      <div class="flex gap-4">
+        <span class="text-zinc-300">Feed:</span>
+        <a href="#" class="text-zinc-300 underline hover:text-orange-500 transition-colors">RSS</a>
+      </div>
+    </div>
+    </div>
+  </DemoBlock>
+
+  <!-- Blog Article Hero -->
+  <DemoBlock label="Blog Article" variant="dark">
+    <div class="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
+      <!-- Left -->
+      <div class="max-w-xl">
+        <h1 class="font-display font-bold text-white text-2xl md:text-3xl leading-tight">
+          Replacing Kubernetes Ingress-NGINX
+        </h1>
+        <p class="mt-4 text-zinc-400 text-base">
+          Finding a simple replacement for Kubernetes Ingress-NGINX.
+          Ingress controllers are complex, and matching the simplicity
+          of NGINX is hard.
+        </p>
+        <div class="mt-6">
+          <button
+            class="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-4 py-2 text-sm transition duration-150 ease-in-out font-mono cursor-pointer"
+          >
+            &larr; Back to blog
+          </button>
+        </div>
+      </div>
+      <!-- Right: Metadata stats (placeholder — Stats component TBD) -->
+      <div class="flex flex-col gap-6 lg:pt-2">
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-xl font-bold text-white">March 5, 2026</span>
+          <p class="mt-1 text-sm text-zinc-400">published</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <a href="#" class="font-body text-xl font-bold text-white underline hover:text-orange-500 transition-colors">#kubernetes</a>
+          <p class="mt-1 text-sm text-zinc-400">topic</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-xl font-bold text-white">6 min</span>
+          <p class="mt-1 text-sm text-zinc-400">reading time</p>
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <!-- Training / Product Hero -->
+  <DemoBlock label="Training / Product" variant="dark">
+    <div class="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
+      <!-- Left -->
+      <div class="max-w-xl">
+        <!-- Heading with icon -->
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-zinc-700 flex items-center justify-center shrink-0">
+            <span class="text-zinc-500 font-heading text-xs">Logo</span>
+          </div>
+          <h1 class="font-display font-bold text-white text-3xl md:text-4xl leading-tight">
+            <span class="text-orange-500">Kubernetes</span> training
+          </h1>
+        </div>
+        <p class="mt-4 text-zinc-400 text-base">
+          Learn to deploy and run containerized apps at scale. Manage
+          clusters, deploy with Helm, and handle everyday Kubernetes
+          operations.
+        </p>
+      </div>
+      <!-- Right: Stats (placeholder — Stats component TBD) -->
+      <div class="flex flex-col gap-6 lg:pt-2">
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">2 days</span>
+          <p class="mt-1 text-sm text-zinc-400">training duration</p>
+        </div>
+        <div class="border-l-2 border-orange-500 pl-6">
+          <span class="font-body text-3xl font-bold text-white">&euro;220</span>
+          <p class="mt-1 text-sm text-zinc-400">price per person excl. VAT</p>
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+</div>
+
+<!-- Styling Guidelines -->
+<div class="mt-16 border-t border-zinc-200 pt-10 space-y-10">
+  <h3>Styling Guidelines</h3>
+
+  <!-- Layout Pattern -->
+  <div>
+    <h4>Layout Pattern</h4>
+    <p class="mt-2 text-sm text-zinc-600">
+      All hero variants (except Blog Listing) use a two-column flex layout:
+      <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">flex flex-col gap-y-8 lg:flex-row lg:justify-between</code>.
+      Content stacks vertically on mobile and splits horizontally at the <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">lg</code> breakpoint (1024px). The left column holds text content (<code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">max-w-xl</code>), the right column holds stats or an image.
+    </p>
+  </div>
+
+  <!-- Avatar Overflow -->
+  <div>
+    <h4>Homepage Avatar</h4>
+    <p class="mt-2 text-sm text-zinc-600">
+      The homepage hero avatar is allowed to overflow horizontally to the right edge of the section. It also extends to the bottom edge with no padding. Use negative margins (<code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">-mb-16 -mr-6</code>) to offset the section padding. The parent section should use <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">overflow-hidden</code> to clip any excess.
+    </p>
+  </div>
+
+  <!-- Typography -->
+  <div>
+    <h4>Typography</h4>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full text-sm font-heading">
+        <thead>
+          <tr class="border-b border-zinc-200 text-left">
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Element</th>
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Font</th>
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Size</th>
+            <th class="pb-3 font-semibold text-zinc-900">Color</th>
+          </tr>
+        </thead>
+        <tbody class="text-zinc-700">
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Page heading</td>
+            <td class="py-3 pr-6">IBM Plex Sans (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-display</code>)</td>
+            <td class="py-3 pr-6">3xl &ndash; 4xl (responsive)</td>
+            <td class="py-3">white (dark) / zinc-900 (light)</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Homepage heading</td>
+            <td class="py-3 pr-6">IBM Plex Sans (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-display</code>)</td>
+            <td class="py-3 pr-6">3xl &ndash; 6xl (responsive)</td>
+            <td class="py-3">white</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Article heading</td>
+            <td class="py-3 pr-6">IBM Plex Sans (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-display</code>)</td>
+            <td class="py-3 pr-6">2xl &ndash; 3xl (responsive)</td>
+            <td class="py-3">white</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Accent phrase</td>
+            <td class="py-3 pr-6">(inherits)</td>
+            <td class="py-3 pr-6">(inherits)</td>
+            <td class="py-3"><span class="inline-block w-3 h-3 bg-orange-500 mr-2 align-middle"></span>orange-500</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Description</td>
+            <td class="py-3 pr-6">Inter (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-body</code>)</td>
+            <td class="py-3 pr-6">base (16px)</td>
+            <td class="py-3">zinc-400 (dark) / zinc-600 (light)</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Stat value</td>
+            <td class="py-3 pr-6">Inter (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-body</code>)</td>
+            <td class="py-3 pr-6">3xl (page) / xl (article)</td>
+            <td class="py-3">white</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-6 font-semibold">Stat label</td>
+            <td class="py-3 pr-6">Inter (<code class="bg-zinc-100 px-1 py-0.5 text-xs font-mono">font-body</code>)</td>
+            <td class="py-3 pr-6">sm (14px)</td>
+            <td class="py-3">zinc-400</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Stats Pattern -->
+  <div>
+    <h4>Stats Pattern</h4>
+    <p class="mt-2 text-sm text-zinc-600">
+      Stats use the compact callout pattern with an orange left border:
+      <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">border-l-2 border-orange-500 pl-6</code>.
+      The value uses <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">font-body text-3xl font-bold text-white</code>
+      and the label uses <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">text-sm text-zinc-400</code>.
+      A dedicated Stats component will be implemented separately.
+    </p>
+  </div>
+
+  <!-- Button Alignment -->
+  <div>
+    <h4>Button Alignment in Heroes</h4>
+    <p class="mt-2 text-sm text-zinc-600">
+      Unlike cards and forms where buttons are right-aligned (<code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">flex justify-end</code>), hero buttons are left-aligned with the content flow using
+      <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">flex flex-wrap gap-4</code>. The CTA should be visually connected to the preceding copy, not pulled away from it.
+    </p>
+  </div>
+
+  <!-- Variant Reference -->
+  <div>
+    <h4>Variant Reference</h4>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full text-sm font-heading">
+        <thead>
+          <tr class="border-b border-zinc-200 text-left">
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Variant</th>
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Background</th>
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Stats</th>
+            <th class="pb-3 pr-6 font-semibold text-zinc-900">Buttons</th>
+            <th class="pb-3 font-semibold text-zinc-900">Image / Icon</th>
+          </tr>
+        </thead>
+        <tbody class="text-zinc-700">
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Homepage</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-100 border border-zinc-200 mr-2 align-middle"></span>light (zinc-100)</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3 pr-6">1 (CTA)</td>
+            <td class="py-3">Avatar</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Service Page</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>dark</td>
+            <td class="py-3 pr-6">3</td>
+            <td class="py-3 pr-6">3</td>
+            <td class="py-3">&mdash;</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Content Page</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>dark</td>
+            <td class="py-3 pr-6">3</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3">&mdash;</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Blog Listing</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>dark</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3">&mdash;</td>
+          </tr>
+          <tr class="border-b border-zinc-100">
+            <td class="py-3 pr-6 font-semibold">Blog Article</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>dark</td>
+            <td class="py-3 pr-6">3 (metadata)</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3">&mdash;</td>
+          </tr>
+          <tr>
+            <td class="py-3 pr-6 font-semibold">Training</td>
+            <td class="py-3 pr-6"><span class="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>dark</td>
+            <td class="py-3 pr-6">2</td>
+            <td class="py-3 pr-6">&mdash;</td>
+            <td class="py-3">Logo / Icon</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Orange accent text -->
+  <div>
+    <h4>Orange Accent Text</h4>
+    <p class="mt-2 text-sm text-zinc-600">
+      Key phrases in hero headings use <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-mono text-zinc-700">text-orange-500</code> to highlight the most important word or name. This is consistent across all hero variants — the homepage highlights the name, service/content pages highlight the key topic.
+    </p>
+  </div>
+</div>
+</Section>

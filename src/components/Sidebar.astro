@@ -1,5 +1,5 @@
 ---
-import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X } from '@lucide/astro';
+import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X } from '@lucide/astro';
 
 const navGroups = [
   {
@@ -16,6 +16,7 @@ const navGroups = [
   {
     title: 'COMPONENTS',
     items: [
+      { label: 'Hero', id: 'hero', icon: 'PanelTop' },
       { label: 'Color Blocks', id: 'contextual-blocks', icon: 'Square' },
       { label: 'Card', id: 'card', icon: 'CreditCard' },
       { label: 'Buttons', id: 'buttons', icon: 'MousePointerClick' },
@@ -34,7 +35,7 @@ const navGroups = [
 ];
 
 const iconMap: Record<string, any> = {
-  Type, Palette, Code, LayoutGrid, Triangle, Sparkles, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle,
+  Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle,
 };
 ---
 
@@ -149,7 +150,7 @@ const iconMap: Record<string, any> = {
   // --- Scroll spy ---
   const sectionIds = [
     'typography', 'colors', 'code-colors', 'grid-layout', 'shapes', 'animations',
-    'contextual-blocks', 'card', 'buttons', 'forms-inputs', 'states-loading', 'callout-box',
+    'hero', 'contextual-blocks', 'card', 'buttons', 'forms-inputs', 'states-loading', 'callout-box',
     'dos-donts',
   ];
 
