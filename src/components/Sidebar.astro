@@ -1,5 +1,11 @@
 ---
-import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X } from '@lucide/astro';
+import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X, Home } from '@lucide/astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 
 const navGroups = [
   {
@@ -41,7 +47,7 @@ const iconMap: Record<string, any> = {
 
 <!-- Mobile top bar -->
 <div class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-white border-b border-zinc-200 px-4 h-14 lg:hidden">
-  <span class="font-display font-bold text-base text-zinc-900">Mares Design System</span>
+  <span class="font-display font-bold text-base text-zinc-900">Mares Design <span class="text-zinc-400 font-normal">/ {title}</span></span>
   <button id="sidebar-open-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Open menu">
     <Menu size={24} />
   </button>
@@ -54,14 +60,19 @@ const iconMap: Record<string, any> = {
 <div id="sidebar-mobile" class="fixed inset-y-0 left-0 z-50 w-[280px] bg-white border-r border-zinc-200 transform -translate-x-full transition-transform duration-200 ease-in-out lg:hidden overflow-y-auto">
   <div class="flex items-center justify-between p-6 pb-0">
     <div>
-      <div class="font-display font-bold text-lg text-zinc-900">Mares Design System</div>
-      <div class="font-heading text-sm text-zinc-500">v1.0</div>
+      <div class="font-display font-bold text-lg text-zinc-900">Mares Design</div>
+      <div class="font-heading font-medium text-sm text-zinc-500">{title}</div>
+      <div class="font-heading text-xs text-zinc-400">v1.0</div>
     </div>
     <button id="sidebar-close-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Close menu">
       <X size={20} />
     </button>
   </div>
   <nav class="p-6 pt-2">
+    <a href="/" class="flex items-center gap-2.5 text-sm font-heading text-zinc-600 py-1.5 px-3 mb-4 no-underline hover:text-zinc-900 hover:bg-zinc-100 transition-colors mt-2">
+      <Home size={16} class="shrink-0" />
+      <span>Home</span>
+    </a>
     {navGroups.map((group) => (
       <div>
         <h5 class="uppercase text-xs font-heading font-semibold text-zinc-400 tracking-wider mt-8 mb-3 first:mt-4">{group.title}</h5>
@@ -90,10 +101,15 @@ const iconMap: Record<string, any> = {
 <!-- Desktop sidebar -->
 <aside class="hidden lg:block lg:w-[260px] lg:shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:overflow-y-auto bg-white border-r border-zinc-200">
   <div class="p-6">
-    <div class="font-display font-bold text-lg text-zinc-900">Mares Design System</div>
-    <div class="font-heading text-sm text-zinc-500">v1.0</div>
+    <div class="font-display font-bold text-lg text-zinc-900">Mares Design</div>
+    <div class="font-heading font-medium text-sm text-zinc-500">{title}</div>
+    <div class="font-heading text-xs text-zinc-400">v1.0</div>
   </div>
   <nav class="px-6 pb-6">
+    <a href="/" class="flex items-center gap-2.5 text-sm font-heading text-zinc-600 py-1.5 px-3 mb-4 no-underline hover:text-zinc-900 hover:bg-zinc-100 transition-colors">
+      <Home size={16} class="shrink-0" />
+      <span>Home</span>
+    </a>
     {navGroups.map((group) => (
       <div>
         <h5 class="uppercase text-xs font-heading font-semibold text-zinc-400 tracking-wider mt-8 mb-3 first:mt-2">{group.title}</h5>
