@@ -1,11 +1,14 @@
 ---
-import Section from './ui/Section.astro';
-import ColorSwatch from './ui/ColorSwatch.astro';
-import DemoBlock from './ui/DemoBlock.astro';
+import Section from "./ui/Section.astro";
+import ColorSwatch from "./ui/ColorSwatch.astro";
+import DemoBlock from "./ui/DemoBlock.astro";
 ---
 
-<Section id="colors" title="Colors & Palette" subtitle="Brand colors, text palette, and background combinations.">
-
+<Section
+  id="colors"
+  title="Colors & Palette"
+  subtitle="Brand colors, text palette, and background combinations."
+>
   <!-- Primary Color -->
   <div>
     <h3>Primary Color</h3>
@@ -121,15 +124,15 @@ import DemoBlock from './ui/DemoBlock.astro';
   <div class="mt-12">
     <h3>Background Combinations</h3>
     <div class="mt-4 grid gap-6 md:grid-cols-2">
-      <DemoBlock label="Light background">
-        <div class="bg-zinc-100 p-6">
+      <DemoBlock label="Light background" variant="muted">
+        <div class="p-6">
           <div class="bg-white p-4 border border-zinc-200">
             <p class="text-sm text-zinc-700">Block on light background</p>
           </div>
         </div>
       </DemoBlock>
       <DemoBlock label="Dark background" variant="dark">
-        <div class="bg-zinc-900 p-6">
+        <div class="p-6">
           <div class="bg-zinc-800 p-4 border border-zinc-700">
             <p class="text-sm text-zinc-100">Block on dark background</p>
           </div>
@@ -137,5 +140,4 @@ import DemoBlock from './ui/DemoBlock.astro';
       </DemoBlock>
     </div>
   </div>
-
 </Section>
