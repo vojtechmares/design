@@ -5,28 +5,38 @@ import Typography from '../components/Typography.astro';
 import Colors from '../components/Colors.astro';
 import CodeColors from '../components/CodeColors.astro';
 import ContainerSpacing from '../components/ContainerSpacing.astro';
-import Animations from '../components/Animations.astro';
 import Shapes from '../components/Shapes.astro';
+import Animations from '../components/Animations.astro';
 import ContextualBlocks from '../components/ContextualBlocks.astro';
+import Card from '../components/Card.astro';
+import Buttons from '../components/Buttons.astro';
+import FormsInputs from '../components/FormsInputs.astro';
+import LoadingSkeletons from '../components/LoadingSkeletons.astro';
+import States from '../components/States.astro';
+import CalloutBox from '../components/CalloutBox.astro';
 import DosAndDonts from '../components/DosAndDonts.astro';
-import StatesLoading from '../components/StatesLoading.astro';
 ---
 
 <Layout title="Mares Design System">
   <Sidebar slot="sidebar" />
 
-  <section class="hero">
+  <section class="hero pb-4">
     <h1>Mares Design System</h1>
-    <p>Complete visual style specification. This document serves as the single source of truth for design and web development.</p>
+    <p class="mt-2 text-base text-zinc-500">Complete visual style specification. This document serves as the single source of truth for design and web development.</p>
   </section>
 
   <Typography />
   <Colors />
   <CodeColors />
   <ContainerSpacing />
-  <Animations />
   <Shapes />
+  <Animations />
   <ContextualBlocks />
+  <Card />
+  <Buttons />
+  <FormsInputs />
+  <LoadingSkeletons />
+  <CalloutBox />
+  <States />
   <DosAndDonts />
-  <StatesLoading />
 </Layout>

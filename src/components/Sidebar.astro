@@ -1,36 +1,40 @@
 ---
-import { Type, Palette, Code, LayoutGrid, Triangle, Square, MousePointerClick, Loader, CheckCircle, Sparkles, Menu, X } from '@lucide/astro';
+import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X } from '@lucide/astro';
 
 const navGroups = [
   {
     title: 'CORE FOUNDATIONS',
     items: [
       { label: 'Typography', id: 'typography', icon: 'Type' },
-      { label: 'Colors & Palette', id: 'colors', icon: 'Palette' },
+      { label: 'Color Palette', id: 'colors', icon: 'Palette' },
       { label: 'Code Colors', id: 'code-colors', icon: 'Code' },
-      { label: 'Grid & Layout', id: 'grid-layout', icon: 'LayoutGrid' },
+      { label: 'Container & Spacing', id: 'grid-layout', icon: 'LayoutGrid' },
       { label: 'Shapes & Radius', id: 'shapes', icon: 'Triangle' },
+      { label: 'Animations', id: 'animations', icon: 'Sparkles' },
     ],
   },
   {
     title: 'COMPONENTS',
     items: [
       { label: 'Color Blocks', id: 'contextual-blocks', icon: 'Square' },
-      { label: 'Buttons & Inputs', id: 'buttons-inputs', icon: 'MousePointerClick' },
-      { label: 'States & Loading', id: 'states-loading', icon: 'Loader' },
+      { label: 'Card', id: 'card', icon: 'CreditCard' },
+      { label: 'Buttons', id: 'buttons', icon: 'MousePointerClick' },
+      { label: 'Forms & Inputs', id: 'forms-inputs', icon: 'TextCursorInput' },
+      { label: 'Loading & Skeletons', id: 'loading-skeletons', icon: 'Loader' },
+      { label: 'Callout Box', id: 'callout-box', icon: 'MessageSquareQuote' },
     ],
   },
   {
     title: 'GUIDELINES',
     items: [
+      { label: 'States', id: 'states', icon: 'ToggleLeft' },
       { label: "Do's & Don'ts", id: 'dos-donts', icon: 'CheckCircle' },
-      { label: 'Animations', id: 'animations', icon: 'Sparkles' },
     ],
   },
 ];
 
 const iconMap: Record<string, any> = {
-  Type, Palette, Code, LayoutGrid, Triangle, Square, MousePointerClick, Loader, CheckCircle, Sparkles,
+  Type, Palette, Code, LayoutGrid, Triangle, Sparkles, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle,
 };
 ---
 
@@ -144,9 +148,9 @@ const iconMap: Record<string, any> = {
 
   // --- Scroll spy ---
   const sectionIds = [
-    'typography', 'colors', 'code-colors', 'grid-layout', 'shapes',
-    'contextual-blocks', 'buttons-inputs', 'states-loading',
-    'dos-donts', 'animations',
+    'typography', 'colors', 'code-colors', 'grid-layout', 'shapes', 'animations',
+    'contextual-blocks', 'card', 'buttons', 'forms-inputs', 'states-loading', 'callout-box',
+    'dos-donts',
   ];
 
   const sections = sectionIds

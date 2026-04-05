@@ -1,0 +1,29 @@
+---
+/**
+ * States — Form validation and interactive states.
+ */
+import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
+---
+
+<Section id="states" title="States" subtitle="Form validation and interactive states.">
+<div class="space-y-8">
+  <DemoBlock label="Form Validation">
+    <div class="max-w-xs space-y-2">
+      <label class="block font-heading font-semibold" style="color: #dc2626;">
+        Password
+      </label>
+      <input
+        type="text"
+        value="123"
+        readonly
+        class="w-full border-2 px-3 py-2 font-body text-zinc-900"
+        style="border-color: #ef4444;"
+      />
+      <p class="flex items-center gap-1 text-sm" style="color: #dc2626;">
+        <span class="font-heading">ⓘ</span> Password is too short
+      </p>
+    </div>
+  </DemoBlock>
+</div>
+</Section>

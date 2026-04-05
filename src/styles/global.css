@@ -90,6 +90,15 @@
   }
 }
 
+/* Smooth scroll & offset for fixed mobile header */
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
 /* Base styles */
 @layer base {
   body,
