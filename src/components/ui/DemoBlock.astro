@@ -1,12 +1,16 @@
 ---
 interface Props {
   label?: string;
-  variant?: 'light' | 'dark';
+  variant?: 'light' | 'dark' | 'muted';
 }
 
 const { label, variant = 'light' } = Astro.props;
 
-const isDark = variant === 'dark';
+const variantClasses: Record<string, string> = {
+  light: 'bg-white border-zinc-200',
+  dark: 'bg-zinc-900 border-zinc-700',
+  muted: 'bg-zinc-100 border-zinc-200',
+};
 ---
 
 <div>
@@ -18,9 +22,7 @@ const isDark = variant === 'dark';
   <div
     class:list={[
       'border p-6',
-      isDark
-        ? 'bg-zinc-900 border-zinc-700'
-        : 'bg-white border-zinc-200',
+      variantClasses[variant],
     ]}
   >
     <slot />

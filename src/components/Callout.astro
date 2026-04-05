@@ -3,61 +3,84 @@
  * Callout — Highlighted content blocks for important information.
  * Strong left border with multiple background × border color combinations.
  */
-import Section from './ui/Section.astro';
-import DemoBlock from './ui/DemoBlock.astro';
+import Section from "./ui/Section.astro";
+import DemoBlock from "./ui/DemoBlock.astro";
 ---
 
-<Section id="callout-box" title="Callout" subtitle="Highlighted content blocks for important information.">
-<div class="space-y-8">
-
-  <!-- Accent: orange border × orange-50 bg -->
-  <DemoBlock label="Accent">
-    <div class="border-l-4 border-orange-500 bg-orange-50 p-6">
-      <p class="font-heading font-semibold text-zinc-900">Important update</p>
-      <p class="mt-2 font-heading text-zinc-700">This is the primary callout variant. Use it to draw attention to key information on light backgrounds.</p>
-    </div>
-  </DemoBlock>
-
-  <!-- Accent Dark: orange border × zinc-900 bg -->
-  <DemoBlock label="Accent Dark">
-    <div class="border-l-4 border-orange-500 bg-zinc-900 p-6">
-      <p class="font-heading font-semibold text-white">Dark section callout</p>
-      <p class="mt-2 font-heading text-zinc-300">Use this variant on dark backgrounds such as hero sections or footers. The orange border remains the accent anchor.</p>
-    </div>
-  </DemoBlock>
-
-  <!-- Accent Light: orange border × white bg, shown on zinc-100 so white stands out -->
-  <DemoBlock label="Accent Light">
-    <div class="bg-zinc-100 p-6">
-      <div class="border-l-4 border-orange-500 bg-white p-6">
-        <p class="font-heading font-semibold text-zinc-900">Subtle emphasis</p>
-        <p class="mt-2 font-heading text-zinc-700">A minimal variant for when the callout should blend with a white page while still providing a clear visual marker.</p>
+<Section
+  id="callout-box"
+  title="Callout"
+  subtitle="Highlighted content blocks for important information."
+>
+  <div class="space-y-8">
+    <!-- Accent: orange border × orange-50 bg -->
+    <DemoBlock label="Accent">
+      <div class="border-l-4 border-orange-500 bg-orange-50 p-6">
+        <p class="font-heading font-semibold text-zinc-900">Important update</p>
+        <p class="mt-2 font-heading text-zinc-700">
+          This is the primary callout variant. Use it to draw attention to key
+          information on light backgrounds.
+        </p>
       </div>
-    </div>
-  </DemoBlock>
+    </DemoBlock>
 
-  <!-- Neutral: zinc-900 border × zinc-100 bg -->
-  <DemoBlock label="Neutral">
-    <div class="border-l-4 border-zinc-900 bg-zinc-100 p-6">
-      <p class="font-heading font-semibold text-zinc-900">Side note</p>
-      <p class="mt-2 font-heading text-zinc-700">A neutral callout for supplementary information that doesn't require strong emphasis.</p>
-    </div>
-  </DemoBlock>
+    <!-- Accent Dark: orange border × zinc-900 bg -->
+    <DemoBlock label="Accent Dark">
+      <div class="border-l-4 border-orange-500 bg-zinc-900 p-6">
+        <p class="font-heading font-semibold text-white">
+          Dark section callout
+        </p>
+        <p class="mt-2 font-heading text-zinc-300">
+          Use this variant on dark backgrounds such as hero sections or footers.
+          The orange border remains the accent anchor.
+        </p>
+      </div>
+    </DemoBlock>
 
-  <!-- Danger: red-500 border × red-50 bg -->
-  <DemoBlock label="Danger">
-    <div class="border-l-4 border-red-500 bg-red-50 p-6">
-      <p class="font-heading font-semibold text-zinc-900">Breaking change</p>
-      <p class="mt-2 font-heading text-zinc-700">Use this variant for warnings, errors, or destructive action notices that require immediate attention.</p>
-    </div>
-  </DemoBlock>
+    <!-- Accent Light: orange border × white bg, shown on zinc-100 so white stands out -->
+    <DemoBlock label="Accent Light" variant="muted">
+      <div class="border-l-4 border-orange-500 bg-white p-6">
+        <p class="font-heading font-semibold text-zinc-900">
+          Subtle emphasis
+        </p>
+        <p class="mt-2 font-heading text-zinc-700">
+          A minimal variant for when the callout should blend with a white
+          page while still providing a clear visual marker.
+        </p>
+      </div>
+    </DemoBlock>
 
-  <!-- Sidebar usage reference -->
-  <div class="mt-4">
-    <p class="font-heading text-sm text-zinc-500">
-      The sidebar active link uses a compact version of the accent callout pattern: <code class="bg-zinc-100 px-1.5 py-0.5 text-xs font-body text-zinc-700">border-l-2 border-orange-500 bg-orange-50</code>
-    </p>
+    <!-- Neutral: zinc-900 border × zinc-100 bg -->
+    <DemoBlock label="Neutral">
+      <div class="border-l-4 border-zinc-900 bg-zinc-100 p-6">
+        <p class="font-heading font-semibold text-zinc-900">Side note</p>
+        <p class="mt-2 font-heading text-zinc-700">
+          A neutral callout for supplementary information that doesn't require
+          strong emphasis.
+        </p>
+      </div>
+    </DemoBlock>
+
+    <!-- Danger: red-500 border × red-50 bg -->
+    <DemoBlock label="Danger">
+      <div class="border-l-4 border-red-500 bg-red-50 p-6">
+        <p class="font-heading font-semibold text-zinc-900">Breaking change</p>
+        <p class="mt-2 font-heading text-zinc-700">
+          Use this variant for warnings, errors, or destructive action notices
+          that require immediate attention.
+        </p>
+      </div>
+    </DemoBlock>
+
+    <!-- Sidebar usage reference -->
+    <div class="mt-4">
+      <p class="font-heading text-sm text-zinc-500">
+        The sidebar active link uses a compact version of the accent callout
+        pattern: <code
+          class="bg-zinc-100 px-1.5 py-0.5 text-xs font-body text-zinc-700"
+          >border-l-2 border-orange-500 bg-orange-50</code
+        >
+      </p>
+    </div>
   </div>
-
-</div>
 </Section>
