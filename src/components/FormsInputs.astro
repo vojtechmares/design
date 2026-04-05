@@ -1,12 +1,333 @@
 ---
 /**
- * FormsInputs — Placeholder for forms and inputs documentation.
+ * FormsInputs — Form input demos and assembled form examples.
  */
 import Section from './ui/Section.astro';
+import DemoBlock from './ui/DemoBlock.astro';
 ---
 
 <Section id="forms-inputs" title="Forms & Inputs" subtitle="Input fields, form controls, and validation guidelines.">
-  <div class="border border-dashed border-zinc-300 px-8 py-12 text-center">
-    <p class="text-zinc-400 font-heading text-lg">Coming soon</p>
+<div class="space-y-8">
+
+  <p class="text-sm text-zinc-600">
+    All form elements use sharp corners (0px border-radius) consistent with the design system. Inputs use a 1px zinc border with a subtle focus transition.
+  </p>
+
+  <!-- Individual input demos — 2-column grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Text Input -->
+    <DemoBlock label="Text Input">
+      <div class="max-w-sm">
+        <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Full Name</label>
+        <input
+          type="text"
+          placeholder="Jane Doe"
+          class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+        />
+      </div>
+    </DemoBlock>
+
+    <!-- Email Input -->
+    <DemoBlock label="Email Input">
+      <div class="max-w-sm">
+        <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Email Address</label>
+        <input
+          type="email"
+          placeholder="jane@example.com"
+          class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+        />
+      </div>
+    </DemoBlock>
+
+    <!-- Phone Number -->
+    <DemoBlock label="Phone Number">
+      <div class="max-w-sm">
+        <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Phone Number</label>
+        <input
+          type="tel"
+          placeholder="+1 (555) 000-0000"
+          class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+        />
+      </div>
+    </DemoBlock>
+
+    <!-- Checkbox -->
+    <DemoBlock label="Checkbox">
+      <div class="space-y-3">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked
+            class="form-checkbox appearance-none w-5 h-5 border border-zinc-300 bg-white checked:bg-orange-500 checked:border-orange-500 transition-colors cursor-pointer shrink-0"
+          />
+          <span class="text-sm text-zinc-700">I agree to the Terms of Service</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            class="form-checkbox appearance-none w-5 h-5 border border-zinc-300 bg-white checked:bg-orange-500 checked:border-orange-500 transition-colors cursor-pointer shrink-0"
+          />
+          <span class="text-sm text-zinc-700">Subscribe to newsletter</span>
+        </label>
+      </div>
+    </DemoBlock>
+
+    <!-- Radio Button -->
+    <DemoBlock label="Radio Button">
+      <fieldset class="space-y-3">
+        <legend class="font-heading text-sm font-semibold text-zinc-900 mb-2">Preferred Contact</legend>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input
+            type="radio"
+            name="contact-demo"
+            checked
+            class="form-radio appearance-none w-5 h-5 border border-zinc-300 bg-white transition-colors cursor-pointer shrink-0"
+          />
+          <span class="text-sm text-zinc-700">Email</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input
+            type="radio"
+            name="contact-demo"
+            class="form-radio appearance-none w-5 h-5 border border-zinc-300 bg-white transition-colors cursor-pointer shrink-0"
+          />
+          <span class="text-sm text-zinc-700">Phone</span>
+        </label>
+      </fieldset>
+    </DemoBlock>
+
+    <!-- Toggle / Switch -->
+    <DemoBlock label="Toggle / Switch">
+      <div class="space-y-4">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <span class="relative inline-flex items-center w-11 h-6">
+            <input type="checkbox" checked class="sr-only peer" />
+            <span class="absolute inset-0 bg-zinc-300 peer-checked:bg-orange-500 transition-colors"></span>
+            <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white transition-transform peer-checked:translate-x-5"></span>
+          </span>
+          <span class="text-sm text-zinc-700">Enable notifications</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <span class="relative inline-flex items-center w-11 h-6">
+            <input type="checkbox" class="sr-only peer" />
+            <span class="absolute inset-0 bg-zinc-300 peer-checked:bg-orange-500 transition-colors"></span>
+            <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white transition-transform peer-checked:translate-x-5"></span>
+          </span>
+          <span class="text-sm text-zinc-700">Dark mode</span>
+        </label>
+      </div>
+    </DemoBlock>
+
   </div>
+
+  <!-- Full-width demos -->
+  <DemoBlock label="Address (Structured)">
+    <div class="max-w-lg space-y-4">
+      <div>
+        <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Street Address</label>
+        <input
+          type="text"
+          placeholder="123 Main St"
+          class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+        />
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">City</label>
+          <input
+            type="text"
+            placeholder="San Francisco"
+            class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+          />
+        </div>
+        <div>
+          <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">State / Region</label>
+          <input
+            type="text"
+            placeholder="CA"
+            class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+          />
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">ZIP / Postal Code</label>
+          <input
+            type="text"
+            placeholder="94102"
+            class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+          />
+        </div>
+        <div>
+          <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Country</label>
+          <input
+            type="text"
+            placeholder="United States"
+            class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors"
+          />
+        </div>
+      </div>
+    </div>
+  </DemoBlock>
+
+  <DemoBlock label="Textarea">
+    <div class="max-w-lg">
+      <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Message</label>
+      <textarea
+        rows="4"
+        placeholder="Tell us what you need..."
+        class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors resize-y"
+      ></textarea>
+    </div>
+  </DemoBlock>
+
+  <!-- Assembled Form -->
+  <div>
+    <h4 class="mb-6">Assembled Form</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Light variant -->
+      <div>
+        <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">Light</span>
+        <div class="border border-zinc-200 bg-white p-8">
+          <h5 class="text-zinc-900 mb-1">Contact Us</h5>
+          <p class="text-sm text-zinc-500 mb-6">We'd love to hear from you. Fill out the form below.</p>
+          <form class="space-y-5" onsubmit="return false;">
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Full Name</label>
+              <input type="text" placeholder="Jane Doe" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Email</label>
+                <input type="email" placeholder="jane@example.com" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Phone</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Street Address</label>
+              <input type="text" placeholder="123 Main St" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">City</label>
+                <input type="text" placeholder="San Francisco" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">State</label>
+                <input type="text" placeholder="CA" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">ZIP</label>
+                <input type="text" placeholder="94102" class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-900 mb-1.5">Message</label>
+              <textarea rows="3" placeholder="Tell us what you need..." class="border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-700 w-full focus:outline-none focus:border-zinc-500 transition-colors resize-y"></textarea>
+            </div>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="form-checkbox appearance-none w-5 h-5 border border-zinc-300 bg-white checked:bg-orange-500 checked:border-orange-500 transition-colors cursor-pointer shrink-0" />
+              <span class="text-sm text-zinc-700">I agree to the Privacy Policy</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <span class="relative inline-flex items-center w-11 h-6">
+                <input type="checkbox" class="sr-only peer" />
+                <span class="absolute inset-0 bg-zinc-300 peer-checked:bg-orange-500 transition-colors"></span>
+                <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-white transition-transform peer-checked:translate-x-5"></span>
+              </span>
+              <span class="text-sm text-zinc-700">Subscribe to updates</span>
+            </label>
+            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-black font-heading font-semibold text-sm px-6 py-2.5 transition-colors duration-200 cursor-pointer">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dark variant -->
+      <div>
+        <span class="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">Dark</span>
+        <div class="border border-zinc-700 bg-zinc-900 p-8">
+          <h5 class="text-zinc-100 mb-1">Contact Us</h5>
+          <p class="text-sm text-zinc-400 mb-6">We'd love to hear from you. Fill out the form below.</p>
+          <form class="space-y-5" onsubmit="return false;">
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Full Name</label>
+              <input type="text" placeholder="Jane Doe" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Email</label>
+                <input type="email" placeholder="jane@example.com" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Phone</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Street Address</label>
+              <input type="text" placeholder="123 Main St" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">City</label>
+                <input type="text" placeholder="San Francisco" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">State</label>
+                <input type="text" placeholder="CA" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+              </div>
+              <div>
+                <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">ZIP</label>
+                <input type="text" placeholder="94102" class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Message</label>
+              <textarea rows="3" placeholder="Tell us what you need..." class="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors resize-y placeholder:text-zinc-500"></textarea>
+            </div>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="form-checkbox appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 checked:bg-orange-500 checked:border-orange-500 transition-colors cursor-pointer shrink-0" />
+              <span class="text-sm text-zinc-300">I agree to the Privacy Policy</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer">
+              <span class="relative inline-flex items-center w-11 h-6">
+                <input type="checkbox" class="sr-only peer" />
+                <span class="absolute inset-0 bg-zinc-600 peer-checked:bg-orange-500 transition-colors"></span>
+                <span class="absolute top-0.5 left-0.5 w-5 h-5 bg-zinc-100 transition-transform peer-checked:translate-x-5"></span>
+              </span>
+              <span class="text-sm text-zinc-300">Subscribe to updates</span>
+            </label>
+            <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-black font-heading font-semibold text-sm px-6 py-2.5 transition-colors duration-200 cursor-pointer">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 </Section>
+
+<style>
+  .form-checkbox:checked {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .form-radio:checked {
+    background-color: #F97316;
+    box-shadow: inset 0 0 0 3px white;
+    border-color: #F97316;
+  }
+</style>

@@ -47,6 +47,7 @@
 
   --color-red-50: #FEF2F2;
   --color-red-500: #EF4444;
+  --color-red-700: #B91C1C;
 
   /* Animations */
   --animate-fade-in-up: fadeInUp 0.6s ease-out;
