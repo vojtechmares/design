@@ -47,7 +47,7 @@ const iconMap: Record<string, any> = {
 
 <!-- Mobile top bar -->
 <div class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-white border-b border-zinc-200 px-4 h-14 lg:hidden">
-  <span class="font-display font-bold text-base text-zinc-900">Mares Design <span class="text-zinc-400 font-normal">/ {title}</span></span>
+  <span class="font-display text-base text-zinc-900"><span class="text-zinc-400 text-xs font-medium uppercase tracking-wider">Mares Design</span> <span class="font-bold">/ {title}</span></span>
   <button id="sidebar-open-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Open menu">
     <Menu size={24} />
   </button>
@@ -60,8 +60,8 @@ const iconMap: Record<string, any> = {
 <div id="sidebar-mobile" class="fixed inset-y-0 left-0 z-50 w-[280px] bg-white border-r border-zinc-200 transform -translate-x-full transition-transform duration-200 ease-in-out lg:hidden overflow-y-auto">
   <div class="flex items-center justify-between p-6 pb-0">
     <div>
-      <div class="font-display font-bold text-lg text-zinc-900">Mares Design</div>
-      <div class="font-heading font-medium text-sm text-zinc-500">{title}</div>
+      <div class="font-display text-xs font-medium text-zinc-400 uppercase tracking-wider">Mares Design</div>
+      <div class="font-display font-bold text-lg text-zinc-900">{title}</div>
       <div class="font-heading text-xs text-zinc-400">v1.0</div>
     </div>
     <button id="sidebar-close-btn" class="p-2 text-zinc-600 hover:text-zinc-900" aria-label="Close menu">
@@ -101,8 +101,8 @@ const iconMap: Record<string, any> = {
 <!-- Desktop sidebar -->
 <aside class="hidden lg:block lg:w-[260px] lg:shrink-0 lg:fixed lg:inset-y-0 lg:left-0 lg:overflow-y-auto bg-white border-r border-zinc-200">
   <div class="p-6">
-    <div class="font-display font-bold text-lg text-zinc-900">Mares Design</div>
-    <div class="font-heading font-medium text-sm text-zinc-500">{title}</div>
+    <div class="font-display text-xs font-medium text-zinc-400 uppercase tracking-wider">Mares Design</div>
+    <div class="font-display font-bold text-lg text-zinc-900">{title}</div>
     <div class="font-heading text-xs text-zinc-400">v1.0</div>
   </div>
   <nav class="px-6 pb-6">
