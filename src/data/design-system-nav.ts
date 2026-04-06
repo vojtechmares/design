@@ -25,7 +25,7 @@ export const navGroups: NavGroup[] = [
     title: 'COMPONENTS',
     items: [
       { label: 'Hero', id: 'hero', icon: 'PanelTop' },
-      { label: 'Color Blocks', id: 'contextual-blocks', icon: 'Square' },
+      { label: 'Section', id: 'section', icon: 'Square' },
       { label: 'Card', id: 'card', icon: 'CreditCard' },
       { label: 'Buttons', id: 'buttons', icon: 'MousePointerClick' },
       { label: 'Forms & Inputs', id: 'forms-inputs', icon: 'TextCursorInput' },

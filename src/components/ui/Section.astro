@@ -1,32 +1,25 @@
 ---
 interface Props {
-  id: string;
-  title: string;
-  subtitle?: string;
-  variant?: 'light' | 'dark';
+  id?: string;
+  ariaLabel?: string;
+  variant?: 'default' | 'surface' | 'inverse' | 'accent';
+  class?: string;
 }
 
-const { id, title, subtitle, variant = 'light' } = Astro.props;
+const { id, ariaLabel, variant = 'default', class: className } = Astro.props;
 
-const isDark = variant === 'dark';
+const variantStyles: Record<string, string> = {
+  default: 'bg-white',
+  surface: 'bg-zinc-50',
+  inverse: 'bg-zinc-900 text-zinc-100',
+  accent: 'bg-orange-500 text-black',
+};
 ---
 
 <section
   id={id}
-  class:list={[
-    'border-t py-16 px-0',
-    isDark
-      ? 'bg-zinc-900 text-zinc-100 border-zinc-700'
-      : 'bg-white text-zinc-700 border-zinc-200',
-  ]}
+  aria-label={ariaLabel}
+  class:list={[variantStyles[variant], 'py-16 px-8', className]}
 >
-  <h2 class:list={[isDark && 'text-zinc-100']}>{title}</h2>
-  {subtitle && (
-    <p class:list={['mt-2 text-base', isDark ? 'text-zinc-400' : 'text-zinc-500']}>
-      {subtitle}
-    </p>
-  )}
-  <div class="mt-10">
-    <slot />
-  </div>
+  <slot />
 </section>
