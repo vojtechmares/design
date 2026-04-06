@@ -1,50 +1,22 @@
 ---
 import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X, Home } from '@lucide/astro';
+import type { NavGroup } from '../data/design-system-nav';
 
 interface Props {
   title: string;
+  navGroups: NavGroup[];
 }
 
-const { title } = Astro.props;
+const { title, navGroups } = Astro.props;
 
-const navGroups = [
-  {
-    title: 'FOUNDATIONS',
-    items: [
-      { label: 'Typography', id: 'typography', icon: 'Type' },
-      { label: 'Color Palette', id: 'colors', icon: 'Palette' },
-      { label: 'Code Colors', id: 'code-colors', icon: 'Code' },
-      { label: 'Container & Spacing', id: 'grid-layout', icon: 'LayoutGrid' },
-      { label: 'Shapes & Radius', id: 'shapes', icon: 'Triangle' },
-      { label: 'Animations', id: 'animations', icon: 'Sparkles' },
-    ],
-  },
-  {
-    title: 'COMPONENTS',
-    items: [
-      { label: 'Hero', id: 'hero', icon: 'PanelTop' },
-      { label: 'Color Blocks', id: 'contextual-blocks', icon: 'Square' },
-      { label: 'Card', id: 'card', icon: 'CreditCard' },
-      { label: 'Buttons', id: 'buttons', icon: 'MousePointerClick' },
-      { label: 'Forms & Inputs', id: 'forms-inputs', icon: 'TextCursorInput' },
-      { label: 'Loading & Skeletons', id: 'loading-skeletons', icon: 'Loader' },
-      { label: 'Callout', id: 'callout-box', icon: 'MessageSquareQuote' },
-    ],
-  },
-  {
-    title: 'GUIDELINES',
-    items: [
-      { label: 'States', id: 'states', icon: 'ToggleLeft' },
-      { label: "Do's & Don'ts", id: 'dos-donts', icon: 'CheckCircle' },
-    ],
-  },
-];
+const sectionIds = navGroups.flatMap((g) => g.items.map((i) => i.id));
 
 const iconMap: Record<string, any> = {
   Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle,
 };
 ---
 
+<div id="sidebar-root" data-section-ids={JSON.stringify(sectionIds)} class="contents">
 <!-- Mobile top bar -->
 <div class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-white border-b border-zinc-200 px-4 h-14 lg:hidden">
   <span class="font-display text-base text-zinc-900"><span class="text-zinc-400 text-xs font-medium uppercase tracking-wider">Mares Design</span> <span class="font-bold">/ {title}</span></span>
@@ -134,6 +106,7 @@ const iconMap: Record<string, any> = {
     ))}
   </nav>
 </aside>
+</div>
 
 <script>
   // --- Mobile sidebar toggle ---
@@ -164,11 +137,8 @@ const iconMap: Record<string, any> = {
   });
 
   // --- Scroll spy ---
-  const sectionIds = [
-    'typography', 'colors', 'code-colors', 'grid-layout', 'shapes', 'animations',
-    'hero', 'contextual-blocks', 'card', 'buttons', 'forms-inputs', 'states-loading', 'callout-box',
-    'dos-donts',
-  ];
+  const root = document.getElementById('sidebar-root');
+  const sectionIds: string[] = JSON.parse(root?.dataset.sectionIds || '[]');
 
   const sections = sectionIds
     .map((id) => document.getElementById(id))

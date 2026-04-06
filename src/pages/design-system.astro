@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
+import { navGroups } from '../data/design-system-nav';
 import Typography from '../components/Typography.astro';
 import Colors from '../components/Colors.astro';
 import CodeColors from '../components/CodeColors.astro';
@@ -19,7 +20,7 @@ import DosAndDonts from '../components/DosAndDonts.astro';
 ---
 
 <Layout title="Design System — Mares Design" hasSidebar>
-  <Sidebar slot="sidebar" title="Design System" />
+  <Sidebar slot="sidebar" title="Design System" navGroups={navGroups} />
 
   <section class="hero pb-4">
     <h1>Design System</h1>
