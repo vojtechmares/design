@@ -1,5 +1,5 @@
 ---
-import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X, Home } from '@lucide/astro';
+import { Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, Menu, X, Home, FileText, RectangleVertical, Presentation } from '@lucide/astro';
 import type { NavGroup } from '../data/design-system-nav';
 
 interface Props {
@@ -12,7 +12,7 @@ const { title, navGroups } = Astro.props;
 const sectionIds = navGroups.flatMap((g) => g.items.map((i) => i.id));
 
 const iconMap: Record<string, any> = {
-  Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle,
+  Type, Palette, Code, LayoutGrid, Triangle, Sparkles, PanelTop, Square, CreditCard, MousePointerClick, TextCursorInput, Loader, ToggleLeft, MessageSquareQuote, CheckCircle, FileText, RectangleVertical, Presentation,
 };
 ---
 

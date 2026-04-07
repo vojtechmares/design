@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import DocSection from "../components/ui/DocSection.astro";
+import {navGroups} from "../data/printables-nav";
+import {Download} from "@lucide/astro";
+---
+
+<Layout
+  title="Printables — Mares Design"
+  description="Print-ready assets, cheat sheets, and reference cards."
+  hasSidebar
+>
+  <Sidebar slot="sidebar" title="Printables" navGroups={navGroups} />
+
+  <section class="hero pb-4">
+    <h1>Printables</h1>
+    <p class="mt-2 text-base text-zinc-500">
+      Print-ready assets, cheat sheets, and reference cards.
+    </p>
+  </section>
+
+  <DocSection
+    id="business-card"
+    title="Business Card"
+    subtitle="Print-ready business card design with contact details and branding."
+  >
+    <a
+      href="/files/business-card-2026-v1.pdf"
+      download
+      class="inline-flex items-center gap-2 text-sm font-mono font-medium text-orange-600 underline"
+    >
+      <Download size={16} /> Download PDF (2026 v1)
+    </a>
+  </DocSection>
+
+  <DocSection
+    id="pdf-one-pager"
+    title="PDF One Pager"
+    subtitle="Single-page overview with key information and visual identity."
+  >
+    <p class="text-sm font-mono text-zinc-400 uppercase tracking-wider">
+      Coming soon
+    </p>
+  </DocSection>
+
+  <DocSection
+    id="rollup"
+    title="Rollup"
+    subtitle="Large-format rollup banner design for events and presentations."
+  >
+    <p class="text-sm font-mono text-zinc-400 uppercase tracking-wider">
+      Coming soon
+    </p>
+  </DocSection>
+
+  <DocSection
+    id="presentation-template"
+    title="Presentation Template"
+    subtitle="Slide deck template following the visual identity guidelines."
+  >
+    <p class="text-sm font-mono text-zinc-400 uppercase tracking-wider">
+      Coming soon
+    </p>
+  </DocSection>
+</Layout>
