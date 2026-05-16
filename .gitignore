@@ -20,6 +20,10 @@ pnpm-debug.log*
 # playwright
 .playwright/
 .playwright-cli/
+screenshots/
+
+# migration baselines
+.baseline/
 
 # macOS-specific files
 .DS_Store
