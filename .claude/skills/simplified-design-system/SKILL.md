@@ -38,8 +38,24 @@ Self-contained recipe for deriving the SDS from the Mares Design System. This sk
 ### Page chrome
 - The SDS page renders dark via `theme="dark"` on Layout and Sidebar.
 - Body becomes `bg-zinc-900 text-zinc-100`; sidebar chrome swaps to `bg-zinc-900`, borders `border-zinc-800`, idle link `text-zinc-300`, hover `hover:bg-zinc-800`, active link `bg-zinc-800 + border-orange-500`.
+- `<body>` must carry `data-theme={theme}` so the global scoped overrides apply (see "Stylesheet requirements" below). Patched via Layout requirements.
 - Page metadata: `title="Simplified Design System — Mares Design"`, `description="Trimmed visual style specification derived from the main Design System. Dark surface, fewer variants."`, `canonical="https://design.mares.cz/simplified-design-system/"`.
 - Sidebar title: `Simplified Design System`.
+
+### Text color rule (light scale only)
+
+On the dark surface, all text uses the **light zinc scale**:
+
+- `text-zinc-100` — primary emphasis (headings, labels, link text on dark).
+- `text-zinc-200` — inline code chips on dark backgrounds.
+- `text-zinc-300` — body prose.
+- `text-zinc-400` — subtitles, helper text, secondary labels.
+- `text-zinc-500` — captions, metadata, low-priority text.
+- `text-white` — text on the orange-500 accent fill (button "Accent" is the documented exception — it uses `text-black` per the existing button recipe).
+
+**Exception — light islands.** Surfaces with a light fill (callouts: `bg-orange-50`, `bg-white`, `bg-zinc-100`, `bg-red-50`; any "On Light Background" demo; the light "DO" / "DON'T" panels in Do's & Don'ts) deliberately sit as bright islands on the dark page. Text inside them must stay on the dark scale (`text-zinc-700` / `text-zinc-900`) for contrast. These overrides are applied with Tailwind utility classes at the call site and win via Tailwind's layer order (utilities is a later layer than base).
+
+**Implementation.** Components that render heading elements without a color prop (`TypeSample`, `ColorSwatch`'s `<h4>{name}</h4>`) inherit from a global scoped override defined in `src/styles/global.css` — see "Stylesheet requirements" below. The TypeSample h1–h6 samples and the ColorSwatch color names (e.g. "Red-500", "Orange-500") therefore render `zinc-100` automatically with no per-call className needed.
 
 ### Sections kept (in order)
 
@@ -72,6 +88,8 @@ Show:
 
 Drop from DS: the Amber-800 "Text Accent" swatch, the "Background Combinations" demo.
 
+Color names rendered by `ColorSwatch` (e.g. "Red-500", "Orange-500") are `<h4>` elements with no class. They pick up `text-zinc-100` from the global scoped override — no per-swatch className override is needed. Metadata text (`text-zinc-500`) stays as-is and is within the allowed light scale.
+
 ### Animation rules (exact)
 - Drop the whole `<DocSection id="animations">`.
 - Do **not** `import FadeInDemo from '../components/ui/FadeInDemo.tsx'`.
@@ -100,7 +118,7 @@ const { title = 'Mares Design', description, canonical, hasSidebar = false, them
 const bodyClass = theme === 'dark' ? 'min-h-screen bg-zinc-900 text-zinc-100' : 'min-h-screen bg-white';
 ```
 
-Replace `<body class="min-h-screen bg-white">` with `<body class={bodyClass}>`.
+Replace `<body class="min-h-screen bg-white">` with `<body class={bodyClass} data-theme={theme}>`. The `data-theme` attribute is what the global scoped overrides in `src/styles/global.css` select against; light pages get `data-theme="light"`, which the override ignores — no regression for the existing `/design-system/` page.
 
 ### `src/components/Sidebar.astro`
 
@@ -132,6 +150,27 @@ const idleClass = theme === 'dark' ? 'text-zinc-300' : 'text-zinc-600';
 ```
 
 …and replace the old hardcoded `classList.add/remove` arguments with `...activeClasses` / `idleClass`.
+
+## Stylesheet requirements
+
+### `src/styles/global.css`
+
+Append the following inside `@layer base` (NOT at top level, NOT in `@layer utilities`). Placing it in `@layer base` is deliberate: Tailwind's utility layer loads after base, so any explicit `text-zinc-900` / `text-zinc-700` utility class on a heading inside a callout still wins by layer order even though our scoped selector has higher specificity.
+
+```css
+@layer base {
+  [data-theme="dark"] h1,
+  [data-theme="dark"] h2,
+  [data-theme="dark"] h3,
+  [data-theme="dark"] h4,
+  [data-theme="dark"] h5,
+  [data-theme="dark"] h6 {
+    color: var(--color-zinc-100);
+  }
+}
+```
+
+Idempotent: if a block matching this selector list already exists, leave it alone. Do not duplicate.
 
 ## Page shell
 
@@ -266,7 +305,7 @@ Use `variant="dark"` on both demos. The "Mobile First" callout at the bottom use
 
 ### Typography
 
-Render each TypeSample / inline display on dark: emphasis `text-zinc-100`, body `text-zinc-300`, captions `text-zinc-500`. Keep the same fonts, scale, and weights.
+Render each TypeSample / inline display on dark. Because the global scoped override applies `color: var(--color-zinc-100)` to h1–h6 inside `[data-theme="dark"]`, the TypeSample h1–h6 samples render `zinc-100` automatically with no per-call className needed. Use the light scale explicitly for non-heading text: emphasis `text-zinc-100`, body `text-zinc-300`, helper / labels `text-zinc-400`, captions `text-zinc-500`. Keep the same fonts, scale, and weights.
 
 ### Do's & Don'ts (SDS recipe)
 
@@ -345,6 +384,10 @@ After writing `simplified-design-system.mdx`, run each of these checks (via `gre
 | 11 | `grep -c '<DocSection' simplified-design-system.mdx` | exactly 14 (5 foundations + 7 components + 2 guidelines) |
 | 12 | `grep -n 'bg-red-50' simplified-design-system.mdx` (within the `<DocSection id="states">` block) | no match (states use dark error recipe) |
 | 13 | Buttons section: first button in the first DemoBlock row is the Dark variant (`bg-zinc-900`) | yes |
-| 14 | `pnpm astro check` | exits 0 |
+| 14 | `pnpm astro check` (run after the `global.css` and `Layout.astro` edits) | exits 0 |
+| 15 | `grep -n 'data-theme={theme}' src/layouts/Layout.astro` | one match on the `<body>` tag |
+| 16 | `grep -n '\[data-theme="dark"\] h1' src/styles/global.css` | one match (inside `@layer base`) |
+| 17 | `grep -n 'color: var(--color-zinc-100)' src/styles/global.css` | one match in the scoped override block |
+| 18 | Visually verify on `/simplified-design-system/`: TypeSample h1–h6 samples and ColorSwatch color names render light (not zinc-900); callout headings stay dark on their light fills. | yes |
 
 If `pnpm astro check` is unavailable, report it explicitly — do not silently skip.
