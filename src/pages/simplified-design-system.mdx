@@ -61,7 +61,7 @@ import Section from '../components/ui/Section.tsx';
     </div>
 
     <div className="mt-12">
-      <h3 className="text-zinc-100">Typographic Scale</h3>
+      <h3 className="text-zinc-100">Typographic scale</h3>
       <div className="mt-4 overflow-x-auto">
         <table className="w-full text-sm border-collapse">
           <thead>
@@ -136,7 +136,7 @@ import Section from '../components/ui/Section.tsx';
     </div>
 
     <div className="mt-12">
-      <h3 className="text-zinc-100">Link Styles</h3>
+      <h3 className="text-zinc-100">Link styles</h3>
       <div className="mt-4">
         <DemoBlock label="Dark background" variant="dark">
           <a href="#" className="font-medium text-zinc-100 underline">Link on dark background</a>
@@ -149,7 +149,7 @@ import Section from '../components/ui/Section.tsx';
     </div>
   </DocSection>
 
-  <DocSection id="colors" title="Colors & Palette" subtitle="Trimmed brand palette. Page-chrome zinc shades are listed at the bottom for reference." variant="dark">
+  <DocSection id="colors" title="Colors & palette" subtitle="Trimmed brand palette. Page-chrome zinc shades are listed at the bottom for reference." variant="dark">
     <div>
       <h3 className="text-zinc-100">Primary</h3>
       <div className="mt-4 grid gap-6 md:grid-cols-3">
@@ -168,14 +168,14 @@ import Section from '../components/ui/Section.tsx';
     </div>
 
     <div className="mt-12">
-      <h3 className="text-zinc-100">Dark / Default</h3>
+      <h3 className="text-zinc-100">Dark / default</h3>
       <div className="mt-4 max-w-sm">
         <ColorSwatch name="Zinc-900" hex="#18181B" tailwind="Zinc-900" usage="Page background, dark button background, default surface." />
       </div>
     </div>
 
     <div className="mt-12">
-      <h3 className="text-zinc-100">Implicit Shades</h3>
+      <h3 className="text-zinc-100">Implicit shades</h3>
       <p className="mt-2 text-sm text-zinc-400">Used implicitly by the dark page chrome for text, borders, and elevated surfaces. Not part of the brand palette but required to render the page.</p>
       <div className="mt-4 grid gap-6 grid-cols-2 md:grid-cols-4">
         <ColorSwatch name="Zinc-100" hex="#F4F4F5" tailwind="Zinc-100" usage="Primary text on dark." />
@@ -186,7 +186,7 @@ import Section from '../components/ui/Section.tsx';
     </div>
   </DocSection>
 
-  <DocSection id="code-colors" title="Code Colors" subtitle="Syntax highlighting palette for code blocks and inline code." variant="dark">
+  <DocSection id="code-colors" title="Code colors" subtitle="Syntax highlighting palette for code blocks and inline code." variant="dark">
     <div className="grid gap-6 grid-cols-2 lg:grid-cols-3">
       <ColorSwatch name="Blue-300" hex="#93C5FD" rgb="147, 197, 253" tailwind="Blue-300" oklch="0.809 0.105 251.8" cmyk="42%, 22%, 0%, 1%" usage="Functions, methods, procedures." />
       <ColorSwatch name="Emerald-300" hex="#6EE7B7" rgb="110, 231, 183" tailwind="Emerald-300" oklch="0.845 0.143 165.0" cmyk="52%, 0%, 21%, 9%" usage="Strings, text values." />
@@ -196,7 +196,7 @@ import Section from '../components/ui/Section.tsx';
     </div>
 
     <div className="mt-12">
-      <h3 className="text-zinc-100">Code Example</h3>
+      <h3 className="text-zinc-100">Code example</h3>
       <div className="mt-4">
         <DemoBlock label="Syntax highlighting preview" variant="dark">
           <pre className="font-mono text-sm leading-relaxed text-zinc-100 overflow-x-auto"><code><span style={{ color: '#FDBA74' }}>function</span> <span style={{ color: '#93C5FD' }}>calculateTotal</span>(<span style={{ color: '#D8B4FE' }}>items</span>) {'{'}{`\n`}{`  `}<span style={{ color: '#FDBA74' }}>const</span> <span style={{ color: '#FCD34D' }}>TAX_RATE</span> = <span style={{ color: '#FCD34D' }}>0.21</span>;{`\n`}{`  `}<span style={{ color: '#FDBA74' }}>let</span> total = <span style={{ color: '#FCD34D' }}>0</span>;{`\n\n`}{`  `}<span style={{ color: '#FDBA74' }}>for</span> (<span style={{ color: '#FDBA74' }}>const</span> item <span style={{ color: '#FDBA74' }}>of</span> <span style={{ color: '#D8B4FE' }}>items</span>) {'{'}{`\n`}{`    `}<span style={{ color: '#93C5FD' }}>console</span>.<span style={{ color: '#93C5FD' }}>log</span>(<span style={{ color: '#6EE7B7' }}>{`'Processing:'`}</span>, item);{`\n`}{`    `}total += item.price;{`\n`}{`  `}{'}'}{`\n\n`}{`  `}<span style={{ color: '#FDBA74' }}>return</span> total * (<span style={{ color: '#FCD34D' }}>1</span> + <span style={{ color: '#FCD34D' }}>TAX_RATE</span>);{`\n`}{'}'}</code></pre>
@@ -205,19 +205,19 @@ import Section from '../components/ui/Section.tsx';
     </div>
   </DocSection>
 
-  <DocSection id="grid-layout" title="Container & Spacing" subtitle="Container system, hero structure, and grid layouts." variant="dark">
-    <h3 className="mb-6 text-zinc-100">Container System</h3>
+  <DocSection id="grid-layout" title="Container & spacing" subtitle="Container system, hero structure, and grid layouts." variant="dark">
+    <h3 className="mb-6 text-zinc-100">Container system</h3>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <DemoBlock label="Standard Container" variant="dark">
-        <div className="border border-dashed border-zinc-500 p-6 text-center">
+        <div className="border border-dashed border-zinc-600 p-6 text-center">
           <p className="font-heading font-semibold text-zinc-100 text-sm">max-width: 1280px</p>
           <p className="text-xs text-zinc-400 mt-2">Homepage, portfolio, contact, general pages</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label="Prose Mode" variant="dark">
-        <div className="mx-auto border border-dashed border-zinc-500 p-6 text-center" style={{ maxWidth: '65ch' }}>
+        <div className="mx-auto border border-dashed border-zinc-600 p-6 text-center" style={{ maxWidth: '65ch' }}>
           <p className="font-heading font-semibold text-zinc-100 text-sm">max-width: 65ch</p>
           <p className="text-xs text-zinc-400 mt-2">Blog posts, talks, documentation — text-heavy content for optimal readability</p>
         </div>
@@ -230,30 +230,7 @@ import Section from '../components/ui/Section.tsx';
       <span><span className="font-heading font-semibold text-zinc-200">Breakpoint:</span> 1024px</span>
     </div>
 
-    <h3 className="mb-6 text-zinc-100">Hero Section</h3>
-
-    <DemoBlock label="Hero Structure" variant="dark">
-      <div className="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
-        <div className="max-w-xl">
-          <h1 className="text-zinc-100 text-3xl md:text-4xl font-display font-bold leading-tight">Page Title with <span className="text-orange-500">Accent</span></h1>
-          <p className="text-zinc-400 text-sm mt-4">Description text that summarizes the page content. The left column holds the heading, description, and optional CTA buttons.</p>
-        </div>
-        <div className="flex flex-col gap-6 lg:pt-2">
-          <div className="border-l-2 border-orange-500 pl-6">
-            <span className="font-body text-3xl font-bold text-white">Value</span>
-            <p className="mt-1 text-sm text-zinc-400">stat label</p>
-          </div>
-          <div className="border-l-2 border-orange-500 pl-6">
-            <span className="font-body text-3xl font-bold text-white">Value</span>
-            <p className="mt-1 text-sm text-zinc-400">stat label</p>
-          </div>
-        </div>
-      </div>
-    </DemoBlock>
-
-    <p className="text-zinc-400 text-xs mt-4">Structure: Dark background (Zinc-900) → Two-column flex layout (<code className="bg-zinc-800 px-1 py-0.5 font-mono text-zinc-200">lg:flex-row lg:justify-between</code>) → Left: heading + description + buttons → Right: stats with orange left border.</p>
-
-    <h3 className="mt-12 mb-6 text-zinc-100">Grid Layout</h3>
+    <h3 className="mb-6 text-zinc-100">Grid layout</h3>
 
     <div className="flex flex-wrap gap-4 text-xs text-zinc-400 mb-6">
       <span><span className="font-heading font-semibold text-zinc-200">Columns:</span> 12, {'--'}grid-col: 12</span>{" "}
@@ -300,13 +277,13 @@ import Section from '../components/ui/Section.tsx';
     </div>
 
     <div className="mt-8 border-l-4 border-orange-500 bg-orange-50 p-6">
-      <p className="font-heading font-semibold text-zinc-900">Mobile First</p>
+      <p className="font-heading font-semibold text-zinc-900">Mobile first</p>
       <p className="mt-2 font-heading text-zinc-700">The site is mobile-first. Grid layout is optional for specific cases, the primary system is containers with responsive widths.</p>
     </div>
   </DocSection>
 
-  <DocSection id="shapes" title="Shapes & Radius" subtitle="Sharp simplified surface — 0px border radius everywhere." variant="dark">
-    <p className="text-sm text-zinc-400 mb-8">Sharp edges everywhere. No rounding. Technical, modern look inspired by PlanetScale and OpenStatus.</p>
+  <DocSection id="shapes" title="Shapes & radius" subtitle="Sharp design system — 0px border radius everywhere." variant="dark">
+    <p className="text-sm text-zinc-300 mb-8">Sharp edges everywhere. No rounding. Technical, modern look inspired by PlanetScale and OpenStatus.</p>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       <DemoBlock label="Actions" variant="dark">
@@ -329,10 +306,9 @@ import Section from '../components/ui/Section.tsx';
     <span className="uppercase text-xs font-heading font-semibold text-zinc-500 tracking-wider">Components</span>
   </div>
 
-  <DocSection id="hero" title="Hero" subtitle="Full-width page header. The simplified surface uses the dark Service Page variant only." variant="dark">
+  <DocSection id="hero" title="Hero" subtitle="Dark service-page hero — the single SDS variant." variant="dark">
     <div className="space-y-8">
-
-      <p className="text-sm text-zinc-400">The simplified surface ships a single hero pattern: a dark two-column layout with stats on the right. Buttons in heroes are left-aligned (flow with content), not right-aligned like cards.</p>
+      <p className="text-sm text-zinc-300">The simplified surface keeps only the Service Page hero: dark background, two-column layout, orange-accented heading, and three stats with an orange left border. Buttons in heroes are left-aligned with the content flow.</p>
 
       <DemoBlock label="Service Page" variant="dark">
         <div className="py-10 flex flex-col gap-y-8 lg:flex-row lg:justify-between">
@@ -361,117 +337,78 @@ import Section from '../components/ui/Section.tsx';
           </div>
         </div>
       </DemoBlock>
-
-      <div>
-        <h4 className="text-zinc-100">Stats Pattern</h4>
-        <p className="mt-2 text-sm text-zinc-400">Stats use the compact callout pattern with an orange left border: <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border-l-2 border-orange-500 pl-6</code>. The value uses <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">font-body text-3xl font-bold text-white</code> and the label uses <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">text-sm text-zinc-400</code>.</p>
-      </div>
-
-      <div>
-        <h4 className="text-zinc-100">Button Alignment in Heroes</h4>
-        <p className="mt-2 text-sm text-zinc-400">Unlike cards and forms where buttons are right-aligned (<code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">flex justify-end</code>), hero buttons are left-aligned with the content flow using <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">flex flex-wrap gap-4</code>.</p>
-      </div>
-
     </div>
   </DocSection>
 
-  <DocSection id="section" title="Section" subtitle="Full-width layout block. Simplified surface uses only the inverse (dark) variant." variant="dark">
+  <DocSection id="section" title="Section" subtitle="Full-width layout block — dark variant only on the simplified surface." variant="dark">
     <div className="space-y-8">
+      <p className="text-sm text-zinc-300">The simplified surface keeps only the <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">inverse</code> variant (zinc-900). Light, surface, and accent variants are dropped.</p>
+
       <DemoBlock label="Inverse" variant="dark">
         <Section variant="inverse">
           <h4 className="text-zinc-100">Inverse</h4>
-          <p className="mt-2 text-zinc-400">Dark zinc-900 background. The default section on the simplified surface — used for all content areas, hero, and footer.</p>
+          <p className="mt-2 text-zinc-400">Dark zinc-900 background. The only section variant on the simplified surface — used for hero sections, footers, and high-contrast areas.</p>
         </Section>
       </DemoBlock>
     </div>
-
-    <div className="mt-12">
-      <h3 className="text-zinc-100">Variant</h3>
-      <div className="mt-4 overflow-x-auto">
-        <table>
-          <thead>
-            <tr>
-              <th className="text-left pr-8 pb-2 text-sm font-semibold text-zinc-400">Variant</th>
-              <th className="text-left pr-8 pb-2 text-sm font-semibold text-zinc-400">Background</th>
-              <th className="text-left pb-2 text-sm font-semibold text-zinc-400">Use case</th>
-            </tr>
-          </thead>
-          <tbody className="text-sm text-zinc-300">
-            <tr>
-              <td className="pr-8 py-1.5 font-mono text-xs text-zinc-200">inverse</td>
-              <td className="pr-8 py-1.5">Zinc-900</td>
-              <td className="py-1.5">All content surfaces (the simplified surface has no light section)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
   </DocSection>
 
-  <DocSection id="card" title="Card" subtitle="Container component. Simplified surface keeps Inverse + Accent variants and the hover-lift addon." variant="dark">
+  <DocSection id="card" title="Card" subtitle="Inverse and Accent only, with an optional hover highlight." variant="dark">
     <div className="space-y-8">
-
-      <p className="text-sm text-zinc-400">Cards use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">overflow-hidden p-6</code> as base classes. Border-radius is 0px from the global reset. Two variants for dark and accent contexts; an optional hover effect adds lift and an orange ring.</p>
+      <p className="text-sm text-zinc-300">The simplified surface keeps two card variants — <strong className="text-zinc-100">Inverse</strong> (dark) and <strong className="text-zinc-100">Accent</strong> (orange) — plus an optional <strong className="text-zinc-100">Hover Highlight</strong> add-on. Default, Surface, and Accent Light are dropped.</p>
 
       <DemoBlock label="Inverse" variant="dark">
-        <div className="bg-zinc-900 border border-zinc-800 overflow-hidden p-6">
-          <h4 className="text-white">Inverse card</h4>
-          <p className="mt-2 text-sm text-zinc-300">Dark background with a subtle border. The default card on the simplified surface. Pairs well with white or accent buttons.</p>
+        <div className="bg-zinc-900 text-zinc-100 p-6 border border-zinc-800">
+          <h4 className="text-zinc-100">Inverse card</h4>
+          <p className="mt-2 text-sm text-zinc-300">Dark background with a subtle zinc-800 border. The primary card variant on the simplified surface.</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label="Accent" variant="dark">
-        <div className="bg-orange-500 overflow-hidden p-6">
+        <div className="bg-orange-500 text-black p-6">
           <h4 className="text-black">Accent card</h4>
           <p className="mt-2 text-sm text-black/80">Orange background for pricing blocks, CTAs, or highlighted content that demands attention.</p>
         </div>
       </DemoBlock>
 
-      <DemoBlock label="Hover Effect" variant="dark">
-        <div className="bg-zinc-900 border border-zinc-800 overflow-hidden p-6 transition-all duration-300 ease hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500">
-          <h4 className="text-white">Hoverable card</h4>
+      <DemoBlock label="Hover Highlight (on Inverse)" variant="dark">
+        <div className="bg-zinc-900 text-zinc-100 p-6 border border-zinc-800 transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500">
+          <h4 className="text-zinc-100">Hoverable card</h4>
           <p className="mt-2 text-sm text-zinc-300">Hover to see the lift and orange ring. Use on clickable cards like training listings or service links.</p>
         </div>
       </DemoBlock>
 
-      <DemoBlock label="With Content" variant="dark">
-        <div className="bg-zinc-900 border border-zinc-800 overflow-hidden p-6">
-          <h4 className="text-white">Kubernetes</h4>
-          <p className="mt-2 text-sm text-zinc-300">Learn to deploy and operate containerized applications at scale. Cluster management, Helm, and day-to-day operations.</p>
-          <p className="mt-4 font-mono text-lg font-semibold text-zinc-100">od 5 400 CZK</p>
-          <div className="mt-6 flex justify-end">
-            <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-orange-500 text-black hover:bg-orange-600 active:bg-orange-500 focus-visible:outline-orange-500 px-4 py-2 text-sm transition duration-150 ease-in-out font-mono cursor-pointer">Detail</button>
-          </div>
+      <DemoBlock label="Hover Highlight (on Accent)" variant="dark">
+        <div className="bg-orange-500 text-black p-6 transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500">
+          <h4 className="text-black">Hoverable accent card</h4>
+          <p className="mt-2 text-sm text-black/80">The hover add-on works on the Accent variant too.</p>
         </div>
       </DemoBlock>
 
       <div>
-        <h4 className="text-zinc-100">Variant Reference</h4>
+        <h4 className="text-zinc-100">Variant reference</h4>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm font-heading">
             <thead>
               <tr className="border-b border-zinc-700 text-left">
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Variant</th>
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Background</th>
-                <th className="pb-3 pr-6 font-semibold text-zinc-100">Border</th>
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Text</th>
-                <th className="pb-3 font-semibold text-zinc-100">Tailwind Classes</th>
+                <th className="pb-3 font-semibold text-zinc-100">Tailwind classes</th>
               </tr>
             </thead>
             <tbody className="text-zinc-300">
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6 font-semibold">Inverse</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-900 border border-zinc-700 mr-2 align-middle"></span>zinc-900</td>
-                <td className="py-3 pr-6">zinc-800</td>
-                <td className="py-3 pr-6">white / zinc-300</td>
-                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">bg-zinc-900 border border-zinc-800</code></td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>zinc-900</td>
+                <td className="py-3 pr-6">zinc-100 / zinc-300</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">bg-zinc-900 text-zinc-100 p-6 border border-zinc-800</code></td>
               </tr>
               <tr>
                 <td className="py-3 pr-6 font-semibold">Accent</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-500 mr-2 align-middle"></span>orange-500</td>
-                <td className="py-3 pr-6">none</td>
                 <td className="py-3 pr-6">black / black/80</td>
-                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">bg-orange-500</code></td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">bg-orange-500 text-black p-6</code></td>
               </tr>
             </tbody>
           </table>
@@ -479,20 +416,18 @@ import Section from '../components/ui/Section.tsx';
       </div>
 
       <div>
-        <h4 className="text-zinc-100">Hover Effect</h4>
-        <p className="mt-2 text-sm text-zinc-400">Add the hover addon to any card variant for interactive lift and orange ring. Use on clickable cards (training listings, service links).</p>
+        <h4 className="text-zinc-100">Hover highlight</h4>
+        <p className="mt-2 text-sm text-zinc-300">Add the hover add-on to either card variant for interactive lift and an orange ring.</p>
         <div className="mt-3">
-          <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">transition-all duration-300 ease hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500</code>
+          <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500</code>
         </div>
       </div>
-
     </div>
   </DocSection>
 
-  <DocSection id="buttons" title="Buttons" subtitle="Three colors: Dark (default), Accent, White. Reordered so Dark leads the simplified surface." variant="dark">
+  <DocSection id="buttons" title="Buttons" subtitle="Three colours: Dark (default), Accent, White." variant="dark">
     <div className="space-y-8">
-
-      <p className="text-sm text-zinc-400"><strong className="text-zinc-100">Dark is the default button on the simplified surface.</strong> Use Accent for primary brand emphasis, White for inverted CTAs. Buttons use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">font-mono</code> (JetBrains Mono) and have 0px border-radius. Buttons are always right-aligned within their parent container.</p>
+      <p className="text-sm text-zinc-300"><strong className="text-zinc-100">Dark is the default button on the simplified surface.</strong> Use Accent for primary brand emphasis, White for inverted CTAs. Buttons use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">font-mono</code> (JetBrains Mono) and are always right-aligned within their parent container.</p>
 
       <DemoBlock label="Normal" variant="dark">
         <div className="flex items-center justify-end gap-4">
@@ -510,8 +445,15 @@ import Section from '../components/ui/Section.tsx';
         </div>
       </DemoBlock>
 
+      <DemoBlock label="On Dark Background" variant="dark">
+        <div className="flex items-center justify-end gap-4">
+          <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-orange-500 text-black hover:bg-orange-600 active:bg-orange-500 focus-visible:outline-orange-500 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Accent</button>{" "}
+          <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">White</button>
+        </div>
+      </DemoBlock>
+
       <div>
-        <h4 className="text-zinc-100">Hover & Active States</h4>
+        <h4 className="text-zinc-100">Hover & active states</h4>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm font-heading">
             <thead>
@@ -526,7 +468,7 @@ import Section from '../components/ui/Section.tsx';
             <tbody className="text-zinc-300">
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6 font-semibold">Dark</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-900 border border-zinc-700 mr-2 align-middle"></span>zinc-900</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>zinc-900</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-700 mr-2 align-middle"></span>zinc-700</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-800 mr-2 align-middle"></span>zinc-800</td>
                 <td className="py-3">white</td>
@@ -540,8 +482,8 @@ import Section from '../components/ui/Section.tsx';
               </tr>
               <tr>
                 <td className="py-3 pr-6 font-semibold">White</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-white border border-zinc-200 mr-2 align-middle"></span>white</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-50 border border-zinc-200 mr-2 align-middle"></span>orange-50</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-white border border-zinc-700 mr-2 align-middle"></span>white</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-50 border border-zinc-700 mr-2 align-middle"></span>orange-50</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-500 mr-2 align-middle"></span>orange-500</td>
                 <td className="py-3">zinc-900</td>
               </tr>
@@ -558,8 +500,8 @@ import Section from '../components/ui/Section.tsx';
               <tr className="border-b border-zinc-700 text-left">
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Size</th>
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Padding</th>
-                <th className="pb-3 pr-6 font-semibold text-zinc-100">Font Size</th>
-                <th className="pb-3 font-semibold text-zinc-100">Tailwind Classes</th>
+                <th className="pb-3 pr-6 font-semibold text-zinc-100">Font size</th>
+                <th className="pb-3 font-semibold text-zinc-100">Tailwind classes</th>
               </tr>
             </thead>
             <tbody className="text-zinc-300">
@@ -582,37 +524,14 @@ import Section from '../components/ui/Section.tsx';
 
       <div>
         <h4 className="text-zinc-100">Alignment</h4>
-        <p className="mt-2 text-sm text-zinc-400">Buttons are always right-aligned within their parent container (cards, forms, dialogs). Use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">flex justify-end</code> on the button wrapper.</p>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <DemoBlock label="In a Card" variant="dark">
-            <div className="space-y-4">
-              <p className="text-sm text-zinc-300">Card content goes here with some descriptive text.</p>
-              <div className="flex justify-end">
-                <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-800 focus-visible:outline-zinc-900 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Action</button>
-              </div>
-            </div>
-          </DemoBlock>
-          <DemoBlock label="In a Form" variant="dark">
-            <div className="space-y-4">
-              <div>
-                <label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Email</label>
-                <input type="email" placeholder="jane@example.com" className="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors placeholder:text-zinc-500" />
-              </div>
-              <div className="flex justify-end">
-                <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-800 focus-visible:outline-zinc-900 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Submit</button>
-              </div>
-            </div>
-          </DemoBlock>
-        </div>
+        <p className="mt-2 text-sm text-zinc-300">Buttons are always right-aligned within their parent container (cards, forms, dialogs). Use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">flex justify-end</code> on the button wrapper.</p>
       </div>
-
     </div>
   </DocSection>
 
-  <DocSection id="forms-inputs" title="Forms & Inputs" subtitle="Dark assembly only — the simplified surface drops the light form variants." variant="dark">
+  <DocSection id="forms-inputs" title="Forms & inputs" subtitle="Dark assembly only. Sharp corners, zinc-600 border, zinc-800 fill." variant="dark">
     <div className="space-y-8">
-
-      <p className="text-sm text-zinc-400">All form elements use sharp corners (0px border-radius). Inputs use a 1px <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">zinc-600</code> border on a <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">zinc-800</code> fill with a subtle focus transition to <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">zinc-400</code>.</p>
+      <p className="text-sm text-zinc-300">All form elements use sharp corners (0px border-radius). On the simplified surface only the dark assembly is documented — <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border-zinc-600 bg-zinc-800 text-zinc-100</code>.</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <DemoBlock label="Text Input" variant="dark">
@@ -653,11 +572,11 @@ import Section from '../components/ui/Section.tsx';
           <fieldset className="space-y-3">
             <legend className="font-heading text-sm font-semibold text-zinc-100 mb-2">Preferred Contact</legend>
             <label className="flex items-center gap-3 cursor-pointer">
-              <input type="radio" name="contact-demo" checked readOnly className="form-radio appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 transition-colors cursor-pointer shrink-0" />
+              <input type="radio" name="contact-demo-sds" checked readOnly className="form-radio appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 transition-colors cursor-pointer shrink-0" />
               <span className="text-sm text-zinc-300">Email</span>
             </label>{" "}
             <label className="flex items-center gap-3 cursor-pointer">
-              <input type="radio" name="contact-demo" className="form-radio appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 transition-colors cursor-pointer shrink-0" />
+              <input type="radio" name="contact-demo-sds" className="form-radio appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 transition-colors cursor-pointer shrink-0" />
               <span className="text-sm text-zinc-300">Phone</span>
             </label>
           </fieldset>
@@ -679,11 +598,18 @@ import Section from '../components/ui/Section.tsx';
                 <span className="absolute inset-0 bg-zinc-600 peer-checked:bg-orange-500 transition-colors"></span>
                 <span className="absolute top-0.5 left-0.5 w-5 h-5 bg-white transition-transform peer-checked:translate-x-5"></span>
               </span>
-              <span className="text-sm text-zinc-300">Show advanced options</span>
+              <span className="text-sm text-zinc-300">Dark mode</span>
             </label>
           </div>
         </DemoBlock>
       </div>
+
+      <DemoBlock label="Textarea" variant="dark">
+        <div className="max-w-lg">
+          <label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Message</label>
+          <textarea rows={4} placeholder="Tell us what you need..." className="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors resize-y placeholder:text-zinc-500"></textarea>
+        </div>
+      </DemoBlock>
 
       <DemoBlock label="Address (Structured)" variant="dark">
         <div className="max-w-lg space-y-4">
@@ -714,16 +640,9 @@ import Section from '../components/ui/Section.tsx';
         </div>
       </DemoBlock>
 
-      <DemoBlock label="Textarea" variant="dark">
-        <div className="max-w-lg">
-          <label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Message</label>
-          <textarea rows={4} placeholder="Tell us what you need..." className="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors resize-y placeholder:text-zinc-500"></textarea>
-        </div>
-      </DemoBlock>
-
       <div>
-        <h4 className="text-zinc-100 mb-6">Assembled Form</h4>
-        <div className="border border-zinc-700 bg-zinc-900 p-8 max-w-2xl">
+        <h4 className="text-zinc-100 mb-6">Assembled form</h4>
+        <div className="border border-zinc-700 bg-zinc-900 p-8">
           <h5 className="text-zinc-100 mb-1">Contact Us</h5>
           <p className="text-sm text-zinc-400 mb-6">{`We'd love to hear from you. Fill out the form below.`}</p>
           <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
@@ -756,130 +675,45 @@ import Section from '../components/ui/Section.tsx';
         </div>
       </div>
 
-      <div className="mt-16 border-t border-zinc-700 pt-10 space-y-10">
-        <h3 className="text-zinc-100">Styling Guidelines</h3>
-
-        <div>
-          <h4 className="text-zinc-100">Input Tokens</h4>
-          <p className="mt-2 text-sm text-zinc-400">Classes for text-based inputs (<code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">text</code>, <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">email</code>, <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">tel</code>, <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">textarea</code>) on the simplified surface.</p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full text-sm font-heading">
-              <thead>
-                <tr className="border-b border-zinc-700 text-left">
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Element</th>
-                  <th className="pb-3 font-semibold text-zinc-100">Dark Classes (SDS)</th>
-                </tr>
-              </thead>
-              <tbody className="text-zinc-300">
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Input</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Textarea</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">Same as input + resize-y</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Label</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">block font-heading text-sm font-semibold text-zinc-100 mb-1.5</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Helper text</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">text-xs text-zinc-400 mt-1</code></td>
-                </tr>
-                <tr>
-                  <td className="py-3 pr-6">Placeholder</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">placeholder:text-zinc-500</code></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-zinc-100">Control Tokens</h4>
-          <p className="mt-2 text-sm text-zinc-400">Checkbox, radio, and toggle all use <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">appearance-none</code> to strip browser defaults. Toggle uses the <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">peer</code> pattern with a hidden <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">sr-only</code> checkbox.</p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full text-sm font-heading">
-              <thead>
-                <tr className="border-b border-zinc-700 text-left">
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Control</th>
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Default State</th>
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Checked State</th>
-                  <th className="pb-3 font-semibold text-zinc-100">Notes</th>
-                </tr>
-              </thead>
-              <tbody className="text-zinc-300">
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Checkbox</td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">w-5 h-5 border border-zinc-600 bg-zinc-800</code></td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">checked:bg-orange-500 checked:border-orange-500</code></td>
-                  <td className="py-3">SVG checkmark via CSS background-image</td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Radio</td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">w-5 h-5 border border-zinc-600 bg-zinc-800</code></td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">bg-orange-500 + inset box-shadow</code></td>
-                  <td className="py-3">Square shape (0px radius), inset dot via box-shadow</td>
-                </tr>
-                <tr>
-                  <td className="py-3 pr-6">Toggle</td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">w-11 h-6 bg-zinc-600</code></td>
-                  <td className="py-3 pr-6"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">peer-checked:bg-orange-500 + translate-x-5</code></td>
-                  <td className="py-3">Hidden sr-only checkbox + peer siblings for track and knob</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-zinc-100">Spacing Rules</h4>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full text-sm font-heading">
-              <thead>
-                <tr className="border-b border-zinc-700 text-left">
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Relationship</th>
-                  <th className="pb-3 pr-6 font-semibold text-zinc-100">Value</th>
-                  <th className="pb-3 font-semibold text-zinc-100">Class</th>
-                </tr>
-              </thead>
-              <tbody className="text-zinc-300">
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Label to input</td>
-                  <td className="py-3 pr-6">6px</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">mb-1.5</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Between fields</td>
-                  <td className="py-3 pr-6">20px</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">space-y-5</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Inline field gap</td>
-                  <td className="py-3 pr-6">16px</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">gap-4</code></td>
-                </tr>
-                <tr className="border-b border-zinc-800">
-                  <td className="py-3 pr-6">Form padding (in card)</td>
-                  <td className="py-3 pr-6">32px</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">p-8</code></td>
-                </tr>
-                <tr>
-                  <td className="py-3 pr-6">Helper text to input</td>
-                  <td className="py-3 pr-6">4px</td>
-                  <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">mt-1</code></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <div>
+        <h4 className="text-zinc-100">Token reference</h4>
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full text-sm font-heading">
+            <thead>
+              <tr className="border-b border-zinc-700 text-left">
+                <th className="pb-3 pr-6 font-semibold text-zinc-100">Element</th>
+                <th className="pb-3 font-semibold text-zinc-100">Dark classes</th>
+              </tr>
+            </thead>
+            <tbody className="text-zinc-300">
+              <tr className="border-b border-zinc-800">
+                <td className="py-3 pr-6">Input</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100</code></td>
+              </tr>
+              <tr className="border-b border-zinc-800">
+                <td className="py-3 pr-6">Label</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">block font-heading text-sm font-semibold text-zinc-100 mb-1.5</code></td>
+              </tr>
+              <tr className="border-b border-zinc-800">
+                <td className="py-3 pr-6">Helper text</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">text-xs text-zinc-400 mt-1</code></td>
+              </tr>
+              <tr className="border-b border-zinc-800">
+                <td className="py-3 pr-6">Placeholder</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">placeholder:text-zinc-500</code></td>
+              </tr>
+              <tr>
+                <td className="py-3 pr-6">Focus border</td>
+                <td className="py-3"><code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">focus:border-zinc-400</code></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
     </div>
   </DocSection>
 
-  <DocSection id="loading-skeletons" title="Loading & Skeletons" subtitle="Skeleton placeholders and shimmer animations. Identical to the main Design System." variant="dark">
+  <DocSection id="loading-skeletons" title="Loading & skeletons" subtitle="Skeleton placeholders and shimmer animations." variant="dark">
     <div className="space-y-8">
       <DemoBlock label="Skeleton Loading" variant="dark">
         <div className="flex items-start gap-4">
@@ -893,19 +727,21 @@ import Section from '../components/ui/Section.tsx';
     </div>
   </DocSection>
 
-  <DocSection id="callout-box" title="Callout" subtitle="Four variants: accent, accent-light, neutral, danger. Light fills appear as bright islands on the dark page." variant="dark">
+  <DocSection id="callout-box" title="Callout" subtitle="Four light-fill variants. Intentional bright islands on the dark page." variant="dark">
     <div className="space-y-8">
+      <p className="text-sm text-zinc-300">Callouts are deliberately light: they sit as bright islands on the dark page to draw attention. The Accent Dark variant from the main Design System is dropped — callouts here are always light-filled.</p>
+
       <DemoBlock label="Accent" variant="dark">
         <div className="border-l-4 border-orange-500 bg-orange-50 p-6">
           <p className="font-heading font-semibold text-zinc-900">Important update</p>
-          <p className="mt-2 font-heading text-zinc-700">The primary callout variant. Use it to draw attention to key information on the dark surface.</p>
+          <p className="mt-2 font-heading text-zinc-700">This is the primary callout variant. Use it to draw attention to key information.</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label="Accent Light" variant="dark">
         <div className="border-l-4 border-orange-500 bg-white p-6">
           <p className="font-heading font-semibold text-zinc-900">Subtle emphasis</p>
-          <p className="mt-2 font-heading text-zinc-700">A minimal variant for when the callout should feel lighter than the orange fill while keeping the accent marker.</p>
+          <p className="mt-2 font-heading text-zinc-700">A minimal variant for when the callout should blend with a neutral surface while still providing a clear visual marker.</p>
         </div>
       </DemoBlock>
 
@@ -923,21 +759,8 @@ import Section from '../components/ui/Section.tsx';
         </div>
       </DemoBlock>
 
-      <div className="mt-4">
-        <p className="font-heading text-sm text-zinc-400">The sidebar active link uses a compact version of the accent callout pattern: <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border-l-2 border-orange-500 bg-zinc-800</code> on the dark sidebar.</p>
-      </div>
-    </div>
-
-    <div className="mt-16 border-t border-zinc-700 pt-10 space-y-10">
-      <h3 className="text-zinc-100">Styling Guidelines</h3>
-
       <div>
-        <h4 className="text-zinc-100">Structure</h4>
-        <p className="mt-2 text-sm text-zinc-400">Every callout uses a strong left border (<code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">border-l-4</code>) with <code className="bg-zinc-800 px-1.5 py-0.5 text-xs font-mono text-zinc-200">p-6</code> padding and sharp corners (border-radius: 0). The simplified surface keeps light-fill recipes intentionally — they read as bright islands on the dark page.</p>
-      </div>
-
-      <div>
-        <h4 className="text-zinc-100">Color Combinations</h4>
+        <h4 className="text-zinc-100">Variant reference</h4>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm font-heading">
             <thead>
@@ -945,36 +768,36 @@ import Section from '../components/ui/Section.tsx';
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Variant</th>
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Border</th>
                 <th className="pb-3 pr-6 font-semibold text-zinc-100">Background</th>
-                <th className="pb-3 pr-6 font-semibold text-zinc-100">Label Color</th>
-                <th className="pb-3 font-semibold text-zinc-100">Text Color</th>
+                <th className="pb-3 pr-6 font-semibold text-zinc-100">Label</th>
+                <th className="pb-3 font-semibold text-zinc-100">Text</th>
               </tr>
             </thead>
             <tbody className="text-zinc-300">
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6 font-semibold">Accent</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-500 mr-2 align-middle"></span>orange-500</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-50 border border-zinc-200 mr-2 align-middle"></span>orange-50</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-50 border border-zinc-700 mr-2 align-middle"></span>orange-50</td>
                 <td className="py-3 pr-6">zinc-900</td>
                 <td className="py-3">zinc-700</td>
               </tr>
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6 font-semibold">Accent Light</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-orange-500 mr-2 align-middle"></span>orange-500</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-white border border-zinc-200 mr-2 align-middle"></span>white</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-white border border-zinc-700 mr-2 align-middle"></span>white</td>
                 <td className="py-3 pr-6">zinc-900</td>
                 <td className="py-3">zinc-700</td>
               </tr>
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6 font-semibold">Neutral</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-900 mr-2 align-middle"></span>zinc-900</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-100 border border-zinc-200 mr-2 align-middle"></span>zinc-100</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-100 border border-zinc-700 mr-2 align-middle"></span>zinc-100</td>
                 <td className="py-3 pr-6">zinc-900</td>
                 <td className="py-3">zinc-700</td>
               </tr>
               <tr>
                 <td className="py-3 pr-6 font-semibold">Danger</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-red-500 mr-2 align-middle"></span>red-500</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-red-50 border border-zinc-200 mr-2 align-middle"></span>red-50</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-red-50 border border-zinc-700 mr-2 align-middle"></span>red-50</td>
                 <td className="py-3 pr-6">zinc-900</td>
                 <td className="py-3">zinc-700</td>
               </tr>
@@ -989,12 +812,11 @@ import Section from '../components/ui/Section.tsx';
     <span className="uppercase text-xs font-heading font-semibold text-zinc-500 tracking-wider">Guidelines</span>
   </div>
 
-  <DocSection id="states" title="States" subtitle="Form validation and interactive states. Errors adapted for the dark surface — no red-50 fills." variant="dark">
+  <DocSection id="states" title="States" subtitle="Form validation and interactive states — dark error recipe." variant="dark">
     <div className="space-y-8">
-
       <div>
-        <h4 className="text-zinc-100">Danger / Error States</h4>
-        <p className="mt-2 text-sm text-zinc-400">On the simplified (dark) surface, error states use a red-500 border on a zinc-800 fill, with red-300 inline message text. There is no light-red fill anywhere in the form layer.</p>
+        <h4 className="text-zinc-100">Danger / error states</h4>
+        <p className="mt-2 text-sm text-zinc-300">On the simplified surface, error inputs keep the dark fill — the soft red wash from the main Design System is dropped here. The border and inline message carry the red signal.</p>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm font-heading">
             <thead>
@@ -1008,17 +830,17 @@ import Section from '../components/ui/Section.tsx';
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6">Error border</td>
                 <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-red-500 mr-2 align-middle"></span>Red-500 (2px)</td>
-                <td className="py-3">Input borders</td>
+                <td className="py-3">Input borders, callout left border</td>
               </tr>
               <tr className="border-b border-zinc-800">
                 <td className="py-3 pr-6">Error text</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 mr-2 align-middle" style={{ background: '#FCA5A5' }}></span>Red-300</td>
-                <td className="py-3">Inline error messages</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-red-300 mr-2 align-middle"></span>Red-300</td>
+                <td className="py-3">Inline error messages (lighter on dark)</td>
               </tr>
               <tr>
-                <td className="py-3 pr-6">Error fill</td>
-                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-800 border border-zinc-700 mr-2 align-middle"></span>Zinc-800</td>
-                <td className="py-3">Input background remains the dark surface fill — no red wash</td>
+                <td className="py-3 pr-6">Input fill</td>
+                <td className="py-3 pr-6"><span className="inline-block w-3 h-3 bg-zinc-800 mr-2 align-middle"></span>Zinc-800</td>
+                <td className="py-3">Stays dark — no red background fill</td>
               </tr>
             </tbody>
           </table>
@@ -1026,63 +848,66 @@ import Section from '../components/ui/Section.tsx';
       </div>
 
       <DemoBlock label="Form Validation — Error" variant="dark">
-        <div className="max-w-xs space-y-2">
-          <label className="block font-heading font-semibold text-zinc-100">Password</label>
-          <input type="text" defaultValue="123" readOnly className="w-full border-2 border-red-500 bg-zinc-800 px-3 py-2 text-zinc-100 focus:outline-none transition-colors" />
-          <p className="flex items-center gap-1 text-sm" style={{ color: '#FCA5A5' }}><span className="font-heading">ⓘ</span> Password is too short</p>
+        <div className="max-w-sm">
+          <label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Email</label>
+          <input type="email" defaultValue="not-an-email" className="border-2 border-red-500 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none transition-colors" />
+          <p className="text-xs text-red-300 mt-1">Please enter a valid email address.</p>
         </div>
       </DemoBlock>
-
     </div>
   </DocSection>
 
-  <DocSection id="dos-donts" title={`Do's & Don'ts`} subtitle="Contrast and accessibility guidelines for the simplified surface." variant="dark">
+  <DocSection id="dos-donts" title={`Do's & don'ts`} subtitle="Contrast and accessibility guidelines on the dark surface." variant="dark">
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
       <DemoBlock label="Do" variant="dark">
         <div className="space-y-3">
-          <div className="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-black">Black text</div>
+          <div className="bg-zinc-900 p-4">
+            <div className="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-black">Black text</div>
+          </div>
           <div className="flex items-center gap-2">
             <span className="font-heading text-sm font-semibold" style={{ color: '#34D399' }}>✓ DO</span>
           </div>
-          <p className="text-sm text-zinc-400">High contrast on orange.</p>
+          <p className="text-sm text-zinc-300">High contrast on orange — black text wins.</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label={`Don't`} variant="dark">
         <div className="space-y-3">
-          <div className="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-white">White text</div>
-          <div className="flex items-center gap-2">
-            <span className="font-heading text-sm font-semibold" style={{ color: '#FCA5A5' }}>{`✗ DON'T`}</span>
+          <div className="bg-zinc-900 p-4">
+            <div className="inline-block bg-orange-500 px-6 py-2 font-heading font-semibold text-white">White text</div>
           </div>
-          <p className="text-sm text-zinc-400">Low contrast (poor readability).</p>
+          <div className="flex items-center gap-2">
+            <span className="font-heading text-sm font-semibold text-red-300">{`✗ DON'T`}</span>
+          </div>
+          <p className="text-sm text-zinc-300">Low contrast (poor readability).</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label="Do" variant="dark">
         <div className="space-y-3">
-          <div className="max-w-xs space-y-2">
-            <label className="block font-heading text-sm font-semibold text-zinc-100">Password</label>
-            <input type="text" defaultValue="123" readOnly className="w-full border-2 border-red-500 bg-zinc-800 px-3 py-2 text-zinc-100" />
-            <p className="flex items-center gap-1 text-sm" style={{ color: '#FCA5A5' }}><span className="font-heading">ⓘ</span> Password is too short</p>
+          <div className="bg-zinc-800 p-4 space-y-2">
+            <label className="block font-heading text-sm font-semibold text-zinc-100">Email</label>
+            <input type="email" defaultValue="not-an-email" readOnly className="w-full border-2 border-red-500 bg-zinc-800 px-3 py-2 text-sm text-zinc-100" />
+            <p className="text-xs text-red-300">Please enter a valid email address.</p>
           </div>
           <div className="flex items-center gap-2">
             <span className="font-heading text-sm font-semibold" style={{ color: '#34D399' }}>✓ DO</span>
           </div>
-          <p className="text-sm text-zinc-400">Border outline + inline error text is sufficient on dark.</p>
+          <p className="text-sm text-zinc-300">Border outline + inline error text is sufficient.</p>
         </div>
       </DemoBlock>
 
       <DemoBlock label={`Don't`} variant="dark">
         <div className="space-y-3">
-          <div className="max-w-xs space-y-2">
-            <label className="block font-heading text-sm font-semibold text-white">Password</label>
-            <input type="text" defaultValue="123" readOnly className="w-full border-2 border-red-500 bg-red-500 px-3 py-2 text-white" />
-            <p className="flex items-center gap-1 text-sm text-white"><span className="font-heading">ⓘ</span> Password is too short</p>
+          <div className="bg-zinc-800 p-4 space-y-2">
+            <label className="block font-heading text-sm font-semibold text-white">Email</label>
+            <input type="email" defaultValue="not-an-email" readOnly className="w-full bg-red-500 text-white border-2 border-red-500 px-3 py-2 text-sm" />
+            <p className="text-xs text-white">Please enter a valid email address.</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="font-heading text-sm font-semibold" style={{ color: '#FCA5A5' }}>{`✗ DON'T`}</span>
+            <span className="font-heading text-sm font-semibold text-red-300">{`✗ DON'T`}</span>
           </div>
-          <p className="text-sm text-zinc-400">Solid red fill is too heavy — it breaks visual hierarchy and dominates the dark surface.</p>
+          <p className="text-sm text-zinc-300">Solid red fill is too heavy — it breaks visual hierarchy.</p>
         </div>
       </DemoBlock>
     </div>

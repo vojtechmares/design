@@ -24,7 +24,7 @@ const bodyClass = theme === 'dark' ? 'min-h-screen bg-zinc-900 text-zinc-100' : 
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
   </head>
-  <body class={bodyClass}>
+  <body class={bodyClass} data-theme={theme}>
     <div class="flex min-h-screen">
       <!-- Sidebar slot: hidden on mobile, 260px fixed on desktop -->
       <slot name="sidebar" />
