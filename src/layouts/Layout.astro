@@ -6,9 +6,11 @@ interface Props {
   description?: string;
   canonical?: string;
   hasSidebar?: boolean;
+  theme?: 'light' | 'dark';
 }
 
-const { title = 'Mares Design', description, canonical, hasSidebar = false } = Astro.props;
+const { title = 'Mares Design', description, canonical, hasSidebar = false, theme = 'light' } = Astro.props;
+const bodyClass = theme === 'dark' ? 'min-h-screen bg-zinc-900 text-zinc-100' : 'min-h-screen bg-white';
 ---
 
 <html lang="en">
@@ -22,7 +24,7 @@ const { title = 'Mares Design', description, canonical, hasSidebar = false } = A
     {description && <meta name="description" content={description} />}
     {canonical && <link rel="canonical" href={canonical} />}
   </head>
-  <body class="min-h-screen bg-white">
+  <body class={bodyClass}>
     <div class="flex min-h-screen">
       <!-- Sidebar slot: hidden on mobile, 260px fixed on desktop -->
       <slot name="sidebar" />
