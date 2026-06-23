@@ -37,31 +37,31 @@ Self-contained recipe for deriving the SDS from the Mares Design System. This sk
 
 ### Page chrome
 - The SDS page renders dark via `theme="dark"` on Layout and Sidebar.
-- Body becomes `bg-zinc-900 text-zinc-100`; sidebar chrome swaps to `bg-zinc-900`, borders `border-zinc-800`, idle link `text-zinc-300`, hover `hover:bg-zinc-800`, active link `bg-zinc-800 + border-orange-500`.
+- Body becomes `bg-neutral-900 text-neutral-100`; sidebar chrome swaps to `bg-neutral-900`, borders `border-neutral-800`, idle link `text-neutral-300`, hover `hover:bg-neutral-800`, active link `bg-neutral-800 + border-orange-500`.
 - `<body>` must carry `data-theme={theme}` so the global scoped overrides apply (see "Stylesheet requirements" below). Patched via Layout requirements.
 - Page metadata: `title="Simplified Design System — Mares Design"`, `description="Trimmed visual style specification derived from the main Design System. Dark surface, fewer variants."`, `canonical="https://design.mares.cz/simplified-design-system/"`.
 - Sidebar title: `Simplified Design System`.
 
 ### Text color rule (light scale only)
 
-On the dark surface, all text uses the **light zinc scale**:
+On the dark surface, all text uses the **light neutral scale**:
 
-- `text-zinc-100` — primary emphasis (headings, labels, link text on dark).
-- `text-zinc-200` — inline code chips on dark backgrounds.
-- `text-zinc-300` — body prose.
-- `text-zinc-400` — subtitles, helper text, secondary labels.
-- `text-zinc-500` — captions, metadata, low-priority text.
+- `text-neutral-100` — primary emphasis (headings, labels, link text on dark).
+- `text-neutral-200` — inline code chips on dark backgrounds.
+- `text-neutral-300` — body prose.
+- `text-neutral-400` — subtitles, helper text, secondary labels.
+- `text-neutral-500` — captions, metadata, low-priority text.
 - `text-white` — text on the orange-500 accent fill (button "Accent" is the documented exception — it uses `text-black` per the existing button recipe).
 
-**Exception — light islands.** Surfaces with a light fill (callouts: `bg-orange-50`, `bg-white`, `bg-zinc-100`, `bg-red-50`; any "On Light Background" demo; the light "DO" / "DON'T" panels in Do's & Don'ts) deliberately sit as bright islands on the dark page. Text inside them must stay on the dark scale (`text-zinc-700` / `text-zinc-900`) for contrast. These overrides are applied with Tailwind utility classes at the call site and win via Tailwind's layer order (utilities is a later layer than base).
+**Exception — light islands.** Surfaces with a light fill (callouts: `bg-orange-50`, `bg-white`, `bg-neutral-100`, `bg-red-50`; any "On Light Background" demo; the light "DO" / "DON'T" panels in Do's & Don'ts) deliberately sit as bright islands on the dark page. Text inside them must stay on the dark scale (`text-neutral-700` / `text-neutral-900`) for contrast. These overrides are applied with Tailwind utility classes at the call site and win via Tailwind's layer order (utilities is a later layer than base).
 
-**Implementation.** Components that render heading elements without a color prop (`TypeSample`, `ColorSwatch`'s `<h4>{name}</h4>`) inherit from a global scoped override defined in `src/styles/global.css` — see "Stylesheet requirements" below. The TypeSample h1–h6 samples and the ColorSwatch color names (e.g. "Red-500", "Orange-500") therefore render `zinc-100` automatically with no per-call className needed.
+**Implementation.** Components that render heading elements without a color prop (`TypeSample`, `ColorSwatch`'s `<h4>{name}</h4>`) inherit from a global scoped override defined in `src/styles/global.css` — see "Stylesheet requirements" below. The TypeSample h1–h6 samples and the ColorSwatch color names (e.g. "Red-500", "Orange-500") therefore render `neutral-100` automatically with no per-call className needed.
 
 ### Sections kept (in order)
 
 | Group | Section | `id` | Rule |
 |---|---|---|---|
-| Foundations | Typography | `typography` | Same fonts + scale. Render samples on dark — text colors swap (`text-zinc-100` for emphasis, `text-zinc-300` for body, `text-zinc-500` for captions). |
+| Foundations | Typography | `typography` | Same fonts + scale. Render samples on dark — text colors swap (`text-neutral-100` for emphasis, `text-neutral-300` for body, `text-neutral-500` for captions). |
 | Foundations | Color Palette | `colors` | Trimmed (see "Color palette" below). |
 | Foundations | Code Colors | `code-colors` | **Copy verbatim** from DS — all 5 swatches + code example demo. |
 | Foundations | Container & Spacing | `grid-layout` | Container/grid demos kept; demo blocks for "Standard Container" / "Prose Mode" use `variant="dark"` on `DemoBlock`. |
@@ -70,11 +70,11 @@ On the dark surface, all text uses the **light zinc scale**:
 | Components | Section | `section` | Dark variant only. |
 | Components | Card | `card` | **Inverse** + **Accent** + the **Hover Highlight** addon. Drop Default, Surface, Accent Light. |
 | Components | Buttons | `buttons` | 3 colors: Dark (shown first), Accent, White. Drop "On Light Background" demos; keep "On Dark Background" demo. Keep size demos, state table, alignment rule. |
-| Components | Forms & Inputs | `forms-inputs` | Keep **only** the dark assembly. Use `border-zinc-600 bg-zinc-800 text-zinc-100`. Labels `text-zinc-100`. Helper `text-zinc-400`. Focus border `border-zinc-400`. |
+| Components | Forms & Inputs | `forms-inputs` | Keep **only** the dark assembly. Use `border-neutral-600 bg-neutral-800 text-neutral-100`. Labels `text-neutral-100`. Helper `text-neutral-400`. Focus border `border-neutral-400`. |
 | Components | Loading & Skeletons | `loading-skeletons` | **Copy verbatim** — shimmer is exempt from "no animations". |
-| Components | Callout | `callout-box` | 4 variants only: `accent` (orange-50 bg), `accent-light` (white bg), `neutral` (zinc-100 bg), `danger` (red-50 bg). Drop Accent Dark. Light-fill callouts intentionally sit as bright islands on the dark page. |
-| Guidelines | States | `states` | Errors adapted to dark: `border-2 border-red-500 bg-zinc-800 text-red-300`. **No `bg-red-50` fill.** Inline error message: `text-red-300`. |
-| Guidelines | Do's & Don'ts | `dos-donts` | Re-derive for the dark page: contrast demos compare orange text on dark vs. white vs. zinc, using `bg-zinc-900` and `bg-zinc-800` panels. |
+| Components | Callout | `callout-box` | 4 variants only: `accent` (orange-50 bg), `accent-light` (white bg), `neutral` (neutral-100 bg), `danger` (red-50 bg). Drop Accent Dark. Light-fill callouts intentionally sit as bright islands on the dark page. |
+| Guidelines | States | `states` | Errors adapted to dark: `border-2 border-red-500 bg-neutral-800 text-red-300`. **No `bg-red-50` fill.** Inline error message: `text-red-300`. |
+| Guidelines | Do's & Don'ts | `dos-donts` | Re-derive for the dark page: contrast demos compare orange text on dark vs. white vs. neutral, using `bg-neutral-900` and `bg-neutral-800` panels. |
 
 ### Sections dropped
 - **Animations** (`animations`) — the whole `DocSection` is removed.
@@ -83,12 +83,12 @@ On the dark surface, all text uses the **light zinc scale**:
 Show:
 - **Primary**: Orange-500 (`#f97316`), Orange-50 (`#fff7ed`), Orange-600 (`#ea580c`).
 - **Danger**: Red-500 (`#EF4444`), Red-50 (`#FEF2F2`).
-- **Dark / default**: Zinc-900 (`#18181B`).
-- **Implicit shades** (smaller subsection): Zinc-100 (`#F4F4F5`) text on dark, Zinc-300 (`#D4D4D8`) secondary text on dark, Zinc-700 (`#3F3F46`) borders/dividers, Zinc-800 (`#27272A`) elevated surfaces.
+- **Dark / default**: Neutral-900 (`#171717`).
+- **Implicit shades** (smaller subsection): Neutral-100 (`#F5F5F5`) text on dark, Neutral-300 (`#D4D4D4`) secondary text on dark, Neutral-700 (`#404040`) borders/dividers, Neutral-800 (`#262626`) elevated surfaces.
 
 Drop from DS: the Amber-800 "Text Accent" swatch, the "Background Combinations" demo.
 
-Color names rendered by `ColorSwatch` (e.g. "Red-500", "Orange-500") are `<h4>` elements with no class. They pick up `text-zinc-100` from the global scoped override — no per-swatch className override is needed. Metadata text (`text-zinc-500`) stays as-is and is within the allowed light scale.
+Color names rendered by `ColorSwatch` (e.g. "Red-500", "Orange-500") are `<h4>` elements with no class. They pick up `text-neutral-100` from the global scoped override — no per-swatch className override is needed. Metadata text (`text-neutral-500`) stays as-is and is within the allowed light scale.
 
 ### Animation rules (exact)
 - Drop the whole `<DocSection id="animations">`.
@@ -115,7 +115,7 @@ Add `theme?: 'light' | 'dark'` (default `'light'`) to `Props`. Compute a body cl
 
 ```ts
 const { title = 'Mares Design', description, canonical, hasSidebar = false, theme = 'light' } = Astro.props;
-const bodyClass = theme === 'dark' ? 'min-h-screen bg-zinc-900 text-zinc-100' : 'min-h-screen bg-white';
+const bodyClass = theme === 'dark' ? 'min-h-screen bg-neutral-900 text-neutral-100' : 'min-h-screen bg-white';
 ```
 
 Replace `<body class="min-h-screen bg-white">` with `<body class={bodyClass} data-theme={theme}>`. The `data-theme` attribute is what the global scoped overrides in `src/styles/global.css` select against; light pages get `data-theme="light"`, which the override ignores — no regression for the existing `/design-system/` page.
@@ -127,26 +127,26 @@ Add `theme?: 'light' | 'dark'` (default `'light'`) to `Props`. Build a `chrome` 
 ```ts
 const isDark = theme === 'dark';
 const chrome = {
-  panelBg: isDark ? 'bg-zinc-900' : 'bg-white',
-  border:  isDark ? 'border-zinc-800' : 'border-zinc-200',
-  titleText: isDark ? 'text-zinc-100' : 'text-zinc-900',
-  iconBtn: isDark ? 'text-zinc-400 hover:text-zinc-100' : 'text-zinc-600 hover:text-zinc-900',
+  panelBg: isDark ? 'bg-neutral-900' : 'bg-white',
+  border:  isDark ? 'border-neutral-800' : 'border-neutral-200',
+  titleText: isDark ? 'text-neutral-100' : 'text-neutral-900',
+  iconBtn: isDark ? 'text-neutral-400 hover:text-neutral-100' : 'text-neutral-600 hover:text-neutral-900',
   link: isDark
-    ? 'text-zinc-300 hover:text-zinc-100 hover:bg-zinc-800'
-    : 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100',
+    ? 'text-neutral-300 hover:text-neutral-100 hover:bg-neutral-800'
+    : 'text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100',
 };
 ```
 
-Put `data-theme={theme}` on `#sidebar-root`. Swap hardcoded chrome classes (`bg-white`, `border-zinc-200`, `text-zinc-900` for title, link colors) for the `chrome.*` bindings using `class:list={[...]}`.
+Put `data-theme={theme}` on `#sidebar-root`. Swap hardcoded chrome classes (`bg-white`, `border-neutral-200`, `text-neutral-900` for title, link colors) for the `chrome.*` bindings using `class:list={[...]}`.
 
 In the inline `<script>`, derive the active-link recipe from `root.dataset.theme`:
 
 ```ts
 const theme = root?.dataset.theme === 'dark' ? 'dark' : 'light';
 const activeClasses = theme === 'dark'
-  ? ['bg-zinc-800', 'text-zinc-100', 'border-l-2', 'border-orange-500']
-  : ['bg-orange-50', 'text-zinc-900', 'border-l-2', 'border-orange-500'];
-const idleClass = theme === 'dark' ? 'text-zinc-300' : 'text-zinc-600';
+  ? ['bg-neutral-800', 'text-neutral-100', 'border-l-2', 'border-orange-500']
+  : ['bg-orange-50', 'text-neutral-900', 'border-l-2', 'border-orange-500'];
+const idleClass = theme === 'dark' ? 'text-neutral-300' : 'text-neutral-600';
 ```
 
 …and replace the old hardcoded `classList.add/remove` arguments with `...activeClasses` / `idleClass`.
@@ -155,7 +155,7 @@ const idleClass = theme === 'dark' ? 'text-zinc-300' : 'text-zinc-600';
 
 ### `src/styles/global.css`
 
-Append the following inside `@layer base` (NOT at top level, NOT in `@layer utilities`). Placing it in `@layer base` is deliberate: Tailwind's utility layer loads after base, so any explicit `text-zinc-900` / `text-zinc-700` utility class on a heading inside a callout still wins by layer order even though our scoped selector has higher specificity.
+Append the following inside `@layer base` (NOT at top level, NOT in `@layer utilities`). Placing it in `@layer base` is deliberate: Tailwind's utility layer loads after base, so any explicit `text-neutral-900` / `text-neutral-700` utility class on a heading inside a callout still wins by layer order even though our scoped selector has higher specificity.
 
 ```css
 @layer base {
@@ -165,7 +165,7 @@ Append the following inside `@layer base` (NOT at top level, NOT in `@layer util
   [data-theme="dark"] h4,
   [data-theme="dark"] h5,
   [data-theme="dark"] h6 {
-    color: var(--color-zinc-100);
+    color: var(--color-neutral-100);
   }
 }
 ```
@@ -191,24 +191,24 @@ import Section from '../components/ui/Section.tsx';
   <Sidebar slot="sidebar" title="Simplified Design System" navGroups={navGroups} theme="dark" />
 
   <section className="hero pb-4">
-    <h1 className="text-zinc-100">Simplified Design System</h1>
-    <p className="mt-2 text-base text-zinc-400">A trimmed surface of the main Design System: fewer colors, fewer variants, dark by default. Derived mechanically from <code className="bg-zinc-800 px-1.5 py-0.5 font-mono text-xs text-zinc-200">design-system.mdx</code>.</p>
+    <h1 className="text-neutral-100">Simplified Design System</h1>
+    <p className="mt-2 text-base text-neutral-400">A trimmed surface of the main Design System: fewer colors, fewer variants, dark by default. Derived mechanically from <code className="bg-neutral-800 px-1.5 py-0.5 font-mono text-xs text-neutral-200">design-system.mdx</code>.</p>
   </section>
 
   <div className="mt-20 mb-2">
-    <span className="uppercase text-xs font-heading font-semibold text-zinc-500 tracking-wider">Foundations</span>
+    <span className="uppercase text-xs font-heading font-semibold text-neutral-500 tracking-wider">Foundations</span>
   </div>
 
   {/* DocSections go here */}
 
   <div className="mt-20 mb-2">
-    <span className="uppercase text-xs font-heading font-semibold text-zinc-500 tracking-wider">Components</span>
+    <span className="uppercase text-xs font-heading font-semibold text-neutral-500 tracking-wider">Components</span>
   </div>
 
   {/* DocSections go here */}
 
   <div className="mt-20 mb-2">
-    <span className="uppercase text-xs font-heading font-semibold text-zinc-500 tracking-wider">Guidelines</span>
+    <span className="uppercase text-xs font-heading font-semibold text-neutral-500 tracking-wider">Guidelines</span>
   </div>
 
   {/* DocSections go here */}
@@ -217,7 +217,7 @@ import Section from '../components/ui/Section.tsx';
 
 ## Per-section recipes
 
-For each section: prose text follows the DS phrasing but adapts color references to the dark page. Use `text-zinc-300` for body prose, `text-zinc-100` for headings/emphasis, `text-zinc-500` for captions.
+For each section: prose text follows the DS phrasing but adapts color references to the dark page. Use `text-neutral-300` for body prose, `text-neutral-100` for headings/emphasis, `text-neutral-500` for captions.
 
 ### Buttons (SDS recipe)
 
@@ -225,47 +225,47 @@ Order: **Dark, Accent, White** in every demo row.
 
 ```jsx
 {/* Dark */}
-<button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-zinc-900 text-white hover:bg-zinc-700 active:bg-zinc-800 focus-visible:outline-zinc-900 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Dark</button>
+<button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-neutral-900 text-white hover:bg-neutral-700 active:bg-neutral-800 focus-visible:outline-neutral-900 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Dark</button>
 
 {/* Accent */}
 <button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-orange-500 text-black hover:bg-orange-600 active:bg-orange-500 focus-visible:outline-orange-500 px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">Accent</button>
 
 {/* White */}
-<button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-zinc-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">White</button>
+<button className="group inline-flex items-center justify-center font-semibold focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-neutral-900 hover:bg-orange-50 active:bg-orange-500 focus-visible:outline-white px-8 py-4 text-base transition duration-150 ease-in-out font-mono cursor-pointer">White</button>
 ```
 
 Small size: `px-4 py-2 text-sm` swap. Wrap every demo row in `<div className="flex items-center justify-end gap-4">` (right-aligned per the project rule). Only render `variant="dark"` DemoBlocks; do not include the "On Light Background" demo.
 
-State table: Dark row first (zinc-900 default / zinc-700 hover / zinc-800 active / white text), then Accent, then White. Lead the section copy with: "**Dark is the default button on the simplified surface.** Use Accent for primary brand emphasis, White for inverted CTAs."
+State table: Dark row first (neutral-900 default / neutral-700 hover / neutral-800 active / white text), then Accent, then White. Lead the section copy with: "**Dark is the default button on the simplified surface.** Use Accent for primary brand emphasis, White for inverted CTAs."
 
 ### Forms & Inputs (SDS recipe)
 
 Use **only** the dark assembly. Keep all input types from the DS (text, email, phone, checkbox, radio, toggle, textarea, address form). Every `DemoBlock` uses `variant="dark"`.
 
 ```jsx
-<label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Label</label>
-<input type="text" placeholder="…" className="border border-zinc-600 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none focus:border-zinc-400 transition-colors" />
-<p className="text-xs text-zinc-400 mt-1">Helper</p>
+<label className="block font-heading text-sm font-semibold text-neutral-100 mb-1.5">Label</label>
+<input type="text" placeholder="…" className="border border-neutral-600 bg-neutral-800 px-4 py-2.5 text-sm text-neutral-100 w-full focus:outline-none focus:border-neutral-400 transition-colors" />
+<p className="text-xs text-neutral-400 mt-1">Helper</p>
 ```
 
-Checkbox/radio: keep `appearance-none w-5 h-5 border border-zinc-600 bg-zinc-800 checked:bg-orange-500 checked:border-orange-500 transition-colors`.
+Checkbox/radio: keep `appearance-none w-5 h-5 border border-neutral-600 bg-neutral-800 checked:bg-orange-500 checked:border-orange-500 transition-colors`.
 
-Toggle: track `bg-zinc-600 peer-checked:bg-orange-500`, knob `bg-white`.
+Toggle: track `bg-neutral-600 peer-checked:bg-orange-500`, knob `bg-white`.
 
 ### Callouts (SDS recipe — 4 variants)
 
 ```jsx
 {/* accent */}
 <div className="border-l-4 border-orange-500 bg-orange-50 p-6">
-  <p className="font-heading font-semibold text-zinc-900">…</p>
-  <p className="mt-2 font-heading text-zinc-700">…</p>
+  <p className="font-heading font-semibold text-neutral-900">…</p>
+  <p className="mt-2 font-heading text-neutral-700">…</p>
 </div>
 
 {/* accent-light */}
 <div className="border-l-4 border-orange-500 bg-white p-6">…</div>
 
 {/* neutral */}
-<div className="border-l-4 border-zinc-900 bg-zinc-100 p-6">…</div>
+<div className="border-l-4 border-neutral-900 bg-neutral-100 p-6">…</div>
 
 {/* danger */}
 <div className="border-l-4 border-red-500 bg-red-50 p-6">…</div>
@@ -277,8 +277,8 @@ These are intentionally light "islands" on the dark page — do not adapt their 
 
 ```jsx
 <div>
-  <label className="block font-heading text-sm font-semibold text-zinc-100 mb-1.5">Email</label>
-  <input type="email" defaultValue="not-an-email" className="border-2 border-red-500 bg-zinc-800 px-4 py-2.5 text-sm text-zinc-100 w-full focus:outline-none transition-colors" />
+  <label className="block font-heading text-sm font-semibold text-neutral-100 mb-1.5">Email</label>
+  <input type="email" defaultValue="not-an-email" className="border-2 border-red-500 bg-neutral-800 px-4 py-2.5 text-sm text-neutral-100 w-full focus:outline-none transition-colors" />
   <p className="text-xs text-red-300 mt-1">Please enter a valid email address.</p>
 </div>
 ```
@@ -291,7 +291,7 @@ Render the Service Page hero verbatim (dark bg, two-column with stats and orange
 
 ### Card (SDS recipe — Inverse + Accent + Hover Highlight)
 
-- **Inverse**: `bg-zinc-900 text-zinc-100 p-6 border border-zinc-800`.
+- **Inverse**: `bg-neutral-900 text-neutral-100 p-6 border border-neutral-800`.
 - **Accent**: `bg-orange-500 text-black p-6`.
 - **Hover Highlight addon** (apply to either card): `transition-all duration-300 hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-orange-500`.
 
@@ -305,14 +305,14 @@ Use `variant="dark"` on both demos. The "Mobile First" callout at the bottom use
 
 ### Typography
 
-Render each TypeSample / inline display on dark. Because the global scoped override applies `color: var(--color-zinc-100)` to h1–h6 inside `[data-theme="dark"]`, the TypeSample h1–h6 samples render `zinc-100` automatically with no per-call className needed. Use the light scale explicitly for non-heading text: emphasis `text-zinc-100`, body `text-zinc-300`, helper / labels `text-zinc-400`, captions `text-zinc-500`. Keep the same fonts, scale, and weights.
+Render each TypeSample / inline display on dark. Because the global scoped override applies `color: var(--color-neutral-100)` to h1–h6 inside `[data-theme="dark"]`, the TypeSample h1–h6 samples render `neutral-100` automatically with no per-call className needed. Use the light scale explicitly for non-heading text: emphasis `text-neutral-100`, body `text-neutral-300`, helper / labels `text-neutral-400`, captions `text-neutral-500`. Keep the same fonts, scale, and weights.
 
 ### Do's & Don'ts (SDS recipe)
 
 Two contrast demos:
 
-1. Orange text on **white** vs. orange text on **black** — keep the DS message (black wins) but show both side by side as small dark-page panels (`bg-white` panel vs `bg-zinc-900` panel) framed inside the dark page.
-2. Error input handling: DO = `border-2 border-red-500 bg-zinc-800 text-red-300`; DON'T = solid red fill (`bg-red-500 text-white`) shown as the anti-pattern.
+1. Orange text on **white** vs. orange text on **black** — keep the DS message (black wins) but show both side by side as small dark-page panels (`bg-white` panel vs `bg-neutral-900` panel) framed inside the dark page.
+2. Error input handling: DO = `border-2 border-red-500 bg-neutral-800 text-red-300`; DON'T = solid red fill (`bg-red-500 text-white`) shown as the anti-pattern.
 
 ## Nav file
 
@@ -374,7 +374,7 @@ After writing `simplified-design-system.mdx`, run each of these checks (via `gre
 | 1 | `grep -n 'FadeInDemo' simplified-design-system.mdx` | no match |
 | 2 | `grep -n 'id="animations"' simplified-design-system.mdx` | no match |
 | 3 | `grep -n 'typewriter' simplified-design-system.mdx` | no match |
-| 4 | `grep -n 'border-l-4 border-orange-500 bg-zinc-900' simplified-design-system.mdx` | no match (Accent Dark callout removed) |
+| 4 | `grep -n 'border-l-4 border-orange-500 bg-neutral-900' simplified-design-system.mdx` | no match (Accent Dark callout removed) |
 | 5 | `grep -n 'Amber-800' simplified-design-system.mdx` | no match |
 | 6 | `grep -n 'Background Combinations' simplified-design-system.mdx` | no match |
 | 7 | `grep -n 'theme="dark"' simplified-design-system.mdx` | matches Layout + Sidebar lines |
@@ -383,11 +383,11 @@ After writing `simplified-design-system.mdx`, run each of these checks (via `gre
 | 10 | `grep -c 'border-l-4 border-red-500 bg-red-50' simplified-design-system.mdx` | ≥ 1 (danger callout present) |
 | 11 | `grep -c '<DocSection' simplified-design-system.mdx` | exactly 14 (5 foundations + 7 components + 2 guidelines) |
 | 12 | `grep -n 'bg-red-50' simplified-design-system.mdx` (within the `<DocSection id="states">` block) | no match (states use dark error recipe) |
-| 13 | Buttons section: first button in the first DemoBlock row is the Dark variant (`bg-zinc-900`) | yes |
+| 13 | Buttons section: first button in the first DemoBlock row is the Dark variant (`bg-neutral-900`) | yes |
 | 14 | `pnpm astro check` (run after the `global.css` and `Layout.astro` edits) | exits 0 |
 | 15 | `grep -n 'data-theme={theme}' src/layouts/Layout.astro` | one match on the `<body>` tag |
 | 16 | `grep -n '\[data-theme="dark"\] h1' src/styles/global.css` | one match (inside `@layer base`) |
-| 17 | `grep -n 'color: var(--color-zinc-100)' src/styles/global.css` | one match in the scoped override block |
-| 18 | Visually verify on `/simplified-design-system/`: TypeSample h1–h6 samples and ColorSwatch color names render light (not zinc-900); callout headings stay dark on their light fills. | yes |
+| 17 | `grep -n 'color: var(--color-neutral-100)' src/styles/global.css` | one match in the scoped override block |
+| 18 | Visually verify on `/simplified-design-system/`: TypeSample h1–h6 samples and ColorSwatch color names render light (not neutral-900); callout headings stay dark on their light fills. | yes |
 
 If `pnpm astro check` is unavailable, report it explicitly — do not silently skip.
