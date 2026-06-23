@@ -28,10 +28,10 @@ export default function FadeInDemo() {
     <div
       ref={ref}
       id="fade-in-demo"
-      className="opacity-0 bg-zinc-900 text-zinc-100 px-8 py-6 text-center font-heading text-sm"
+      className="opacity-0 bg-neutral-900 text-neutral-100 px-8 py-6 text-center font-heading text-sm"
     >
       <p className="font-semibold mb-1">This element fades in</p>
-      <p className="text-zinc-400 text-xs">animation: fadeInUp 0.6s ease-out</p>
+      <p className="text-neutral-400 text-xs">animation: fadeInUp 0.6s ease-out</p>
     </div>
   );
 }

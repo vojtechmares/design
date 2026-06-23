@@ -26,13 +26,13 @@ export default function DocSection({
       className={cn(
         'border-t py-16 px-0',
         isDark
-          ? 'bg-zinc-900 text-zinc-100 border-zinc-700'
-          : 'bg-white text-zinc-700 border-zinc-200'
+          ? 'bg-neutral-900 text-neutral-100 border-neutral-700'
+          : 'bg-white text-neutral-700 border-neutral-200'
       )}
     >
-      <h2 className={isDark ? 'text-zinc-100' : undefined}>{title}</h2>
+      <h2 className={isDark ? 'text-neutral-100' : undefined}>{title}</h2>
       {subtitle && (
-        <p className={cn('mt-2 text-base', isDark ? 'text-zinc-400' : 'text-zinc-500')}>
+        <p className={cn('mt-2 text-base', isDark ? 'text-neutral-400' : 'text-neutral-500')}>
           {subtitle}
         </p>
       )}

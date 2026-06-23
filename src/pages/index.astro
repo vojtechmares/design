@@ -39,21 +39,21 @@ const iconMap: Record<string, any> = { Paintbrush, Layers, FileText, Image };
 <Layout title="Mares Design">
   <section class="pb-10">
     <h1>Mares Design</h1>
-    <p class="mt-2 text-base text-zinc-500">Design resources, assets, and visual specifications.</p>
+    <p class="mt-2 text-base text-neutral-500">Design resources, assets, and visual specifications.</p>
   </section>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     {designs.map((item) => {
       const Icon = iconMap[item.icon];
       return item.done ? (
-        <div class:list={["group overflow-hidden p-6 transition-all duration-300 ease hover:-translate-y-0.5", item.dark ? "bg-zinc-900" : "bg-orange-50"]}>
+        <div class:list={["group overflow-hidden p-6 transition-all duration-300 ease hover:-translate-y-0.5", item.dark ? "bg-neutral-900" : "bg-orange-50"]}>
           <div class="flex items-start gap-4">
             <div class="shrink-0 mt-0.5 text-orange-500">
               <Icon size={24} />
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class:list={["text-lg font-semibold", item.dark ? "text-zinc-100" : "text-zinc-900"]}>{item.title}</h3>
-              <p class:list={["mt-1 text-sm", item.dark ? "text-zinc-400" : "text-zinc-600"]}>{item.description}</p>
+              <h3 class:list={["text-lg font-semibold", item.dark ? "text-neutral-100" : "text-neutral-900"]}>{item.title}</h3>
+              <p class:list={["mt-1 text-sm", item.dark ? "text-neutral-400" : "text-neutral-600"]}>{item.description}</p>
             </div>
           </div>
           <div class="flex justify-end mt-4">
@@ -65,16 +65,16 @@ const iconMap: Record<string, any> = { Paintbrush, Layers, FileText, Image };
       ) : (
         <div class="bg-orange-50 overflow-hidden p-6 opacity-50">
           <div class="flex items-start gap-4">
-            <div class="shrink-0 mt-0.5 text-zinc-400">
+            <div class="shrink-0 mt-0.5 text-neutral-400">
               <Icon size={24} />
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-lg font-semibold text-zinc-400">{item.title}</h3>
-              <p class="mt-1 text-sm text-zinc-400">{item.description}</p>
+              <h3 class="text-lg font-semibold text-neutral-400">{item.title}</h3>
+              <p class="mt-1 text-sm text-neutral-400">{item.description}</p>
             </div>
           </div>
           <div class="flex justify-end mt-4">
-            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-400 uppercase tracking-wider">Coming soon</span>
+            <span class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-neutral-400 uppercase tracking-wider">Coming soon</span>
           </div>
         </div>
       );

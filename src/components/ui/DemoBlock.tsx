@@ -7,16 +7,16 @@ interface Props {
 }
 
 const variantClasses: Record<string, string> = {
-  light: 'bg-white border-zinc-200',
-  dark: 'bg-zinc-900 border-zinc-700',
-  muted: 'bg-zinc-100 border-zinc-200',
+  light: 'bg-white border-neutral-200',
+  dark: 'bg-neutral-900 border-neutral-700',
+  muted: 'bg-neutral-100 border-neutral-200',
 };
 
 export default function DemoBlock({ label, variant = 'light', children }: Props) {
   return (
     <div>
       {label && (
-        <span className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-zinc-500">
+        <span className="mb-2 block font-heading text-xs font-semibold uppercase tracking-wider text-neutral-500">
           {label}
         </span>
       )}
