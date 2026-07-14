@@ -1,0 +1,45 @@
+# allowBuilds opts specific packages into running install/postinstall scripts
+# (pnpm blocks them by default, and strictDepBuilds makes an unapproved build a
+# hard error). @tailwindcss/oxide (Tailwind v4's native engine), esbuild (via
+# Astro/Vite), sharp (native image processing used by Astro's image service)
+# and workerd (the Workers runtime behind wrangler) all ship prebuilt native
+# bindings their install scripts resolve, and are all genuinely used here.
+allowBuilds:
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true
+  workerd: true
+
+# trustPolicyExclude allowlists specific package versions that pnpm's
+# supply-chain "trust downgrade" heuristic flags. semver@6.3.1 is the
+# legitimate 2023 ReDoS-fix release, pulled in transitively via the Babel
+# toolchain. It lacks provenance attestation that an earlier release carried,
+# which trips the no-downgrade policy. Excluding only this exact version keeps
+# the guardrail active for everything else.
+trustPolicyExclude:
+  - 'semver@6.3.1'
+
+# minimumReleaseAgeExclude opts specific packages out of the 15-day publish
+# cooldown (set globally via pnpm's minimumReleaseAge). astro and @astrojs/*
+# are excluded to allow adopting the Astro 7 major immediately on release
+# (within the cooldown window); narrow the list once the framework version
+# stabilises. The cooldown stays active for everything else.
+minimumReleaseAgeExclude:
+  - 'astro'
+  - '@astrojs/*'
+  # satteri is Astro 7's new default markdown processor, pulled in transitively
+  # via @astrojs/markdown-satteri; recently published alongside the v7 release.
+  # @bruits/* holds satteri's per-platform native bindings (@bruits/satteri-*).
+  - 'satteri'
+  - '@bruits/*'
+  # @napi-rs/wasm-runtime backs Astro 7's native Rust compiler binding
+  # (@astrojs/compiler-rs -> @astrojs/compiler-binding-wasm32-wasi).
+  - '@napi-rs/wasm-runtime'
+  # The Cloudflare deploy toolchain (wrangler ^4.110.0, already pinned in
+  # package.json before this upgrade) publishes weekly, so wrangler and the
+  # miniflare/workerd runtime it pulls in are effectively always inside the
+  # cooldown window.
+  - 'wrangler'
+  - 'miniflare'
+  - 'workerd'
+  - '@cloudflare/*'
