@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "design",
+  "compatibility_date": "2026-06-01",
+  "assets": {
+    "directory": "./dist",
+    // Serve `/design-system` directly (200) and redirect `/design-system/` to it.
+    // The site links to and canonicalises the extensionless form; Cloudflare's
+    // default (`auto-trailing-slash`) would 307 every internal link instead.
+    "html_handling": "drop-trailing-slash",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  // Deployments always target an environment (`--env production`). Configuration is
+  // NOT inherited by Wrangler environments, so `assets` and `observability` are
+  // repeated in each block.
+  "env": {
+    "production": {
+      "name": "design-production",
+      "routes": [
+        {
+          "pattern": "design.mares.cz",
+          "custom_domain": true,
+        },
+      ],
+      "assets": {
+        "directory": "./dist",
+        "html_handling": "drop-trailing-slash",
+      },
+      "observability": {
+        "enabled": true,
+      },
+    },
+  },
+}
